@@ -21,18 +21,18 @@ Dodatkowo aplikacja oferuje **Focus Mode** - timer Pomodoro z wbudowanymi dźwi�
 |---|----------|------|
 | 1 | [`README.md`](README.md) | Main README - podsumowanie projektu |
 | 2 | [`beatspermind-business-plan.md`](beatspermind-business-plan.md) | Pełna analiza biznesowa |
-| 3 | [`beatspermind-product-spec.md`](beatspermind/beatspermind-product-spec.md) | Specyfikacja produktu |
-| 4 | [`beatspermind-ice-ranking.md`](beatspermind/beatspermind-ice-ranking.md) | Ranking pomysłów metodą ICE |
-| 5 | [`beatspermind-kill-the-idea.md`](beatspermind/beatspermind-kill-the-idea.md) | Analiza ryzyka - werdykt PIVOT |
-| 6 | [`beatspermind-competitor-audit.md`](beatspermind/beatspermind-competitor-audit.md) | Analiza 8 konkurentów |
-| 7 | [`beatspermind-icp-persona.md`](beatspermind/beatspermind-icp-persona.md) | Profil idealnego klienta |
-| 8 | [`beatspermind-job-to-be-done.md`](beatspermind/beatspermind-job-to-be-done.md) | Analiza potrzeb użytkownika |
-| 9 | [`beatspermind-mvp-scoping.md`](beatspermind/beatspermind-mvp-scoping.md) | Zakres MVP - 5 funkcji |
-| 10 | [`beatspermind-monetization-strategy.md`](beatspermind/beatspermind-monetization-strategy.md) | Model cenowy Free/$4.99/$9.99 |
-| 11 | [`beatspermind-tech-stack-audit.md`](beatspermind/beatspermind-tech-stack-audit.md) | Rekomendowane technologie |
-| 12 | [`beatspermind-resource-analysis.md`](beatspermind/beatspermind-resource-analysis.md) | Analiza budżetu i zasobów |
-| 13 | [`beatspermind-gtm-strategy.md`](beatspermind/beatspermind-gtm-strategy.md) | Strategia Go-To-Market |
-| 14 | [`beatspermind-user-journey-map.md`](beatspermind/beatspermind-user-journey-map.md) | Mapa ścieżki użytkownika |
+| 3 | [`beatspermind-product-spec.md`](beatspermind-product-spec.md) | Specyfikacja produktu |
+| 4 | [`beatspermind-ice-ranking.md`](beatspermind-ice-ranking.md) | Ranking pomysłów metodą ICE |
+| 5 | [`beatspermind-kill-the-idea.md`](beatspermind-kill-the-idea.md) | Analiza ryzyka - werdykt PIVOT |
+| 6 | [`beatspermind-competitor-audit.md`](beatspermind-competitor-audit.md) | Analiza 8 konkurentów |
+| 7 | [`beatspermind-icp-persona.md`](beatspermind-icp-persona.md) | Profil idealnego klienta |
+| 8 | [`beatspermind-job-to-be-done.md`](beatspermind-job-to-be-done.md) | Analiza potrzeb użytkownika |
+| 9 | [`beatspermind-mvp-scoping.md`](beatspermind-mvp-scoping.md) | Zakres MVP - 5 funkcji |
+| 10 | [`beatspermind-monetization-strategy.md`](beatspermind-monetization-strategy.md) | Model cenowy Free/$4.99/$9.99 |
+| 11 | [`beatspermind-tech-stack-audit.md`](beatspermind-tech-stack-audit.md) | Rekomendowane technologie |
+| 12 | [`beatspermind-resource-analysis.md`](beatspermind-resource-analysis.md) | Analiza budżetu i zasobów |
+| 13 | [`beatspermind-gtm-strategy.md`](beatspermind-gtm-strategy.md) | Strategia Go-To-Market |
+| 14 | [`beatspermind-user-journey-map.md`](beatspermind-user-journey-map.md) | Mapa ścieżki użytkownika |
 
 ---
 
