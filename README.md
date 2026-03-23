@@ -19,8 +19,8 @@ Dodatkowo aplikacja oferuje **Focus Mode** - timer Pomodoro z wbudowanymi dźwi�
 
 | # | Dokument | Opis |
 |---|----------|------|
-| 1 | [`README.md`](beatspermind/README.md) | Main README - podsumowanie projektu |
-| 2 | [`beatspermind-business-plan.md`](beatspermind/beatspermind-business-plan.md) | Pełna analiza biznesowa |
+| 1 | [`README.md`](README.md) | Main README - podsumowanie projektu |
+| 2 | [`beatspermind-business-plan.md`](docs/beatspermind-business-plan.md) | Pełna analiza biznesowa |
 | 3 | [`beatspermind-product-spec.md`](beatspermind/beatspermind-product-spec.md) | Specyfikacja produktu |
 | 4 | [`beatspermind-ice-ranking.md`](beatspermind/beatspermind-ice-ranking.md) | Ranking pomysłów metodą ICE |
 | 5 | [`beatspermind-kill-the-idea.md`](beatspermind/beatspermind-kill-the-idea.md) | Analiza ryzyka - werdykt PIVOT |
