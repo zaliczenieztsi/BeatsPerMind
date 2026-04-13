@@ -2,21 +2,6 @@
 
 ## Projekt: BeatsPerMind
 
-### Referencja do Dokumentacji
-
-Wszystkie szczegóły projektu znajdują się w katalogu `docs/biznes`:
-
-| Dokument | Opis |
-|----------|------|
-| `SPEC.md` | Specyfikacja techniczna - struktura projektu, komponenty, dane JSON, algorytm dopasowania |
-| `README.md` | Główny opis projektu, funkcje MVP, tech stack |
-| `Tech_Stack_Audit.md` | Szczegółowy audyt technologiczny |
-| `MVP_Scoping.md` | Zakres MVP z estymatami czasowymi |
-| `Resource_Analysis.md` | Analiza zasobów i czasu (limit 15h) |
-| `beatspermind-user-journey-map.md` | Mapa ścieżki użytkownika |
-
----
-
 ## Podstawowe Informacje o Projekcie
 
 **BeatsPerMind** to aplikacja webowa dla studentów (projekt studencki MVP, bez backendu):
