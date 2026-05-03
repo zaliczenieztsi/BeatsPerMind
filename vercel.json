@@ -1,7 +1,7 @@
 {
   "build": {
-    "root": "app",
-    "outputDirectory": "dist"
+    "command": "cd app && vite build",
+    "outputDirectory": "app/dist"
   },
   "routes": [
     { "handle": "filesystem" },
