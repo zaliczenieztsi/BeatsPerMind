@@ -1,6 +1,1 @@
-{
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
-  ]
-}
+{\n  "build": {\n    "root": "app",\n    "outputDirectory": "dist"\n  },\n  "routes": [\n    { "handle": "filesystem" },\n    { "src": "/.*", "dest": "/index.html" }\n  ]\n}
