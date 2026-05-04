@@ -13,7 +13,7 @@ export default function Timer() {
   } = useTimer()
 
   // Circular progress bar calculations for SVG
-  const radius = 60
+  const radius = 80
   const circumference = 2 * Math.PI * radius
   const strokeDasharray = circumference
   const strokeDashoffset = circumference - (progress / 100) * circumference
@@ -37,14 +37,14 @@ export default function Timer() {
       <div className="relative group">
         {/* Background circle */}
         <svg
-          width="160"
-          height="160"
+          width="200"
+          height="200"
           className="transform transition-all duration-500 group-hover:scale-105"
         >
           {/* Outer glow circle */}
           <circle
-            cx="80"
-            cy="80"
+            cx="100"
+            cy="100"
             r={radius}
             fill="none"
             stroke="rgba(255,255,255,0.05)"
@@ -52,8 +52,8 @@ export default function Timer() {
           />
           {/* Progress circle with gradient */}
           <circle
-            cx="80"
-            cy="80"
+            cx="100"
+            cy="100"
             r={radius}
             fill="none"
             stroke={pulseColor}
@@ -62,12 +62,12 @@ export default function Timer() {
             strokeDasharray={strokeDasharray}
             strokeDashoffset={strokeDashoffset}
             className="transition-all duration-1000 ease-out"
-            style={{ strokeDashoffset }}
+            style={{ strokeDashoffset, transform: 'rotate(-90deg)', transformOrigin: 'center' }}
           />
           {/* Subtle glow effect */}
           <circle
-            cx="80"
-            cy="80"
+            cx="100"
+            cy="100"
             r={radius + 4}
             fill="none"
             stroke={pulseColor}
