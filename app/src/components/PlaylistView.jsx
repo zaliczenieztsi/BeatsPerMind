@@ -105,7 +105,7 @@ export default function PlaylistView() {
           Tryb Focus
         </Button>
       </div>
-      <LearnMore />
+       <LearnMore bpmRange={bestPlaylist.bpm} />
     </div>
   )
 }

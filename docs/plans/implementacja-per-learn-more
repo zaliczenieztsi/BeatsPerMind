@@ -1,0 +1,50 @@
+# [Data: 2026-05-04] Personalizowana sekcja  Dowiedz si� wi�cej w PlaylistView
+
+## Sekcja 1: Przygotowanie
+- [x] 1. Zweryfikowano czy funkcjonalno�� jest ma�a (jedna sekcja agenta) - tak, dotyczy tylko komponentu LearnMore i jego integracji
+- [x] 2. Sprawdzono dokumentacj� w docs/biznes/SPEC.md - specyfikacja analizowana, struktura danych i komponent�w poznana
+- [x] 3. Zidentyfikowano zale�no�ci (dane, komponenty, hooki):
+  - Komponent: LearnMore.jsx
+  - Komponent wy�ej: PlaylistView.jsx (dost�p do estPlaylist)
+  - Dane: playlists.json (pole pm w playlistach)
+- [x] 4. Kodstarterowy przygotowany - istniej�cy komponent LearnMore przeanalizowany
+
+**Testowanie po sekcji 1:**
+- Zweryfikowano dost�p do pola pm w playlistach z playlists.json (70-85, 100-120 itp.)
+- Zweryfikowano struktur� komponentu LearnMore i mo�liwo�� przekazania props�w
+- Zweryfikowano, �e Landing i PlaylistView to osobne �cie�ki (r�ne konteksty)
+
+---
+
+## Sekcja 2: Implementacja
+- [x] 5. Pliki danych nie wymagaj� modyfikacji (plik playlists.json ju� zawiera pole pm)
+- [x] 6. Zaimplementowano modyfikacj� logiki w komponentach:
+  - Zmodyfikowano LearnMore.jsx - dodano prop pmRange opcjonalny
+  - Gdy podany jest pmRange, sekcja Optymalne BPM dla aktywno�ci zast�powana jest specyficznym tekstem dla danego zakresu BPM
+  - Gdy brak pmRange, zachowywany jest og�lny tekst edukacyjny
+- [x] 7. Modyfikacja komponent�w:
+  - PlaylistView.jsx - przekazywanie pmRange z dopasowanej playlisty do komponentu LearnMore
+  - Landing.jsx - brak zmian (u�ywa LearnMore bez props�w, zachowuje og�lny charakter)
+- [x] 8. Zintegrowano z istniej�cym kodem aplikacji - LearnMore zachowuje wsteczn� kompatybilno�� (dzia�a bez props�w)
+- [x] 9. Dodano obs�ug� przypadk�w brzegowych (brak BPM, niepoprawny format)
+
+**Testowanie po sekcji 2:**
+- Zweryfikowano dzia�anie na stronie g��wnej (LearnMore og�lny)
+- Zweryfikowano dzia�anie w PlaylistView (LearnMore specyficzny dla BPM dopasowanej playlisty)
+- Zweryfikowano poprawne wy�wietlanie r�nych zakres�w BPM (niskie, �rednie, wysokie)
+
+---
+
+## Sekcja 3: Walidacja i Finalizacja
+- [x] 10. Uruchomiono testy manualne aplikacji
+- [x] 11. Sprawdzono poprawno�� kodu (sprawdzenie zgodno�ci z SPEC.md)
+- [x] 12. Sprawdzono czy aplikacja dzia�a poprawnie na wszystkich �cie�kach:
+  - Landing -> LearnMore (og�lny) ?
+  - Quiz -> PlaylistView -> LearnMore (specyficzny dla BPM) ?
+  - PlaylistView -> FocusMode (niezmieniony) ?
+- [x] 13. Zapisano plan z prefixem zawieraj�cym dat�
+
+**Testowanie po sekcji 3:**
+- Aplikacja dzia�a poprawnie, brak b��d�w w konsoli
+- Landing nadal u�ywa og�lnej sekcji Dowiedz si� wi�cej
+- PlaylistView wy�wietla spersonalizowan� sekcj� z informacj� o konkretnym BPM dopasowanej playlisty

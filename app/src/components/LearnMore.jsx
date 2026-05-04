@@ -1,7 +1,32 @@
 import { useState } from 'react'
 
-export default function LearnMore() {
+export default function LearnMore({ bpmRange } = {}) {
   const [isOpen, setIsOpen] = useState(false)
+
+  const renderBpmContent = () => {
+    // Nếu podano konkretny zakres BPM, generuj spersonalizowaną treść
+    if (bpmRange) {
+      return (
+        <div>
+          <h3 className="font-medium text-foreground/90 mb-2">Twój dobór: {bpmRange} BPM</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Ten zakres tempa został dobrany specjalnie do Twojej aktualnej aktywności, poziomu energii i preferencji muzycznych. Muzyka w tym tempie najlepiej sprawdzi się podczas wykonywania Twoich zadań.
+          </p>
+        </div>
+      )
+    }
+    // Wersja ogólna (dla strony głównej)
+    return (
+      <div>
+        <h3 className="font-medium text-foreground/90 mb-2">Optymalne BPM dla aktywności</h3>
+        <ul className="text-sm text-muted-foreground space-y-1">
+          <li>• <strong>Niska aktywność</strong> (relaks) - 40-60 BPM</li>
+          <li>• <strong>Średnia aktywność</strong> (nauka) - 60-80 BPM</li>
+          <li>• <strong>Wysoka aktywność</strong> (siłownia) - 120-140 BPM</li>
+        </ul>
+      </div>
+    )
+  }
 
   return (
     <div className="w-full max-w-md mx-auto mt-8">
@@ -36,14 +61,7 @@ export default function LearnMore() {
             </p>
           </div>
 
-          <div>
-            <h3 className="font-medium text-foreground/90 mb-2">Optymalne BPM dla aktywności</h3>
-            <ul className="text-sm text-muted-foreground space-y-1">
-              <li>• <strong>Niska aktywność</strong> (relaks) - 40-60 BPM</li>
-              <li>• <strong>Średnia aktywność</strong> (nauka) - 60-80 BPM</li>
-              <li>• <strong>Wysoka aktywność</strong> (siłownia) - 120-140 BPM</li>
-            </ul>
-          </div>
+          {renderBpmContent()}
 
           <div>
             <h3 className="font-medium text-foreground/90 mb-2">Aktywność fizyczna vs skupienie</h3>
