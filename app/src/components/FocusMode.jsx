@@ -2,7 +2,6 @@ import Timer from './Timer'
 import AmbientPlayer from './AmbientPlayer'
 import { Link } from 'react-router-dom'
 import { Button } from './ui/button'
-import { useTimer } from '../hooks/useTimer'
 
 export default function FocusMode() {
   return (

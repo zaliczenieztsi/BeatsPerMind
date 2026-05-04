@@ -1,4 +1,5 @@
 import { useTimer } from '../hooks/useTimer'
+import { Button } from './ui/button'
 
 export default function FocusModeTimer() {
   const {
@@ -6,9 +7,9 @@ export default function FocusModeTimer() {
     isRunning,
     mode,
     progress,
+    pomodoroCount,
     reset,
-    toggle,
-    switchMode
+    toggle
   } = useTimer()
 
   // Circular progress bar calculations for SVG
@@ -22,10 +23,13 @@ export default function FocusModeTimer() {
 
   return (
     <div className="flex flex-col items-center gap-6">
-      {/* Mode indicator */}
+      {/* Mode indicator and Pomodoro Counter */}
       <div className="text-center">
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
           {mode === 'work' ? 'Focus Time' : 'Break Time'}
+        </p>
+        <p className="text-xs text-muted-foreground mt-1">
+          Pomodoros: {pomodoroCount}
         </p>
       </div>
 
@@ -101,15 +105,6 @@ export default function FocusModeTimer() {
           Reset
         </Button>
       </div>
-
-      {/* Mode switch hint */}
-      <Button
-        variant="link"
-        onClick={switchMode}
-        className="text-sm transition-all duration-300 hover:text-emerald-600 hover:scale-110"
-      >
-        Switch to {mode === 'work' ? 'Break' : 'Work'} mode
-      </Button>
     </div>
   )
 }

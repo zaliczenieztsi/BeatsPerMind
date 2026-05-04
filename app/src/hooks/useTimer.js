@@ -1,39 +1,50 @@
-import { useState, useCallback, useEffect, useRef } from 'react'
+import { useReducer, useEffect, useRef } from 'react'
+
+const WORK_DURATION = 25 * 60
+const BREAK_DURATION = 5 * 60
+
+const initialState = {
+  mode: 'work',
+  timeLeft: WORK_DURATION,
+  isRunning: false,
+  pomodoroCount: 0
+}
+
+function timerReducer(state, action) {
+  switch (action.type) {
+    case 'TOGGLE':
+      return { ...state, isRunning: !state.isRunning }
+    case 'RESET':
+      return { ...initialState }
+    case 'TICK':
+      if (state.timeLeft <= 1) {
+        if (state.mode === 'work') {
+          return {
+            mode: 'break',
+            timeLeft: BREAK_DURATION,
+            isRunning: state.isRunning,
+            pomodoroCount: state.pomodoroCount + 1
+          }
+        }
+        return {
+          mode: 'work',
+          timeLeft: WORK_DURATION,
+          isRunning: state.isRunning,
+          pomodoroCount: state.pomodoroCount
+        }
+      }
+      return { ...state, timeLeft: state.timeLeft - 1 }
+    default:
+      return state
+  }
+}
 
 export function useTimer() {
-  const [mode, setMode] = useState('work') // 'work' | 'break'
-  const WORK_DURATION = 25 * 60  // 25 minutes for work mode
-  const BREAK_DURATION = 5 * 60   // 5 minutes for break mode
-
-  const [timeLeft, setTimeLeft] = useState(WORK_DURATION)
-  const [isRunning, setIsRunning] = useState(false)
+  const [state, dispatch] = useReducer(timerReducer, initialState)
   const intervalRef = useRef(null)
-  const modeRef = useRef('work')
-
-  const switchMode = useCallback(() => {
-    setMode(prev => {
-      modeRef.current = prev === 'work' ? 'break' : 'work'
-      return prev === 'work' ? 'break' : 'work'
-    })
-  }, [])
-
-  const reset = useCallback(() => {
-    setIsRunning(false)
-    setMode('work')
-    modeRef.current = 'work'
-    setTimeLeft(WORK_DURATION)
-    if (intervalRef.current) {
-      clearInterval(intervalRef.current)
-      intervalRef.current = null
-    }
-  }, [])
-
-  const toggle = useCallback(() => {
-    setIsRunning(prev => !prev)
-  }, [])
 
   useEffect(() => {
-    if (!isRunning) {
+    if (!state.isRunning) {
       if (intervalRef.current) {
         clearInterval(intervalRef.current)
         intervalRef.current = null
@@ -41,18 +52,8 @@ export function useTimer() {
       return
     }
 
-    if (timeLeft === 0) {
-      // Time's up - switch mode
-      setIsRunning(false)
-      switchMode()
-      const newMode = modeRef.current
-      const newDuration = newMode === 'work' ? WORK_DURATION : BREAK_DURATION
-      setTimeLeft(newDuration)
-      return
-    }
-
     intervalRef.current = setInterval(() => {
-      setTimeLeft(prev => prev - 1)
+      dispatch({ type: 'TICK' })
     }, 1000)
 
     return () => {
@@ -61,7 +62,7 @@ export function useTimer() {
         intervalRef.current = null
       }
     }
-  }, [isRunning, timeLeft, switchMode])
+  }, [state.isRunning])
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60)
@@ -69,17 +70,17 @@ export function useTimer() {
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
   }
 
-  const progress = ((mode === 'work' ? WORK_DURATION : BREAK_DURATION) - timeLeft) / (mode === 'work' ? WORK_DURATION : BREAK_DURATION) * 100
+  const progress = ((state.mode === 'work' ? WORK_DURATION : BREAK_DURATION) - state.timeLeft) / (state.mode === 'work' ? WORK_DURATION : BREAK_DURATION) * 100
 
   return {
-    timeLeft,
-    formattedTime: formatTime(timeLeft),
-    isRunning,
-    mode,
-    duration: mode === 'work' ? WORK_DURATION : BREAK_DURATION,
+    timeLeft: state.timeLeft,
+    formattedTime: formatTime(state.timeLeft),
+    isRunning: state.isRunning,
+    mode: state.mode,
+    duration: state.mode === 'work' ? WORK_DURATION : BREAK_DURATION,
     progress,
-    reset,
-    toggle,
-    switchMode
+    pomodoroCount: state.pomodoroCount,
+    reset: () => dispatch({ type: 'RESET' }),
+    toggle: () => dispatch({ type: 'TOGGLE' })
   }
 }
