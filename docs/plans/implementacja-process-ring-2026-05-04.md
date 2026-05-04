@@ -2,85 +2,85 @@
 
 ## Sekcja 1: Przygotowanie
 
-- [x] 1. Zweryfikuj czy funkcjonalno�� jest ma�a (tak - zmiany CSS/SVG tylko)
-- [x] 2. Sprawd� dokumentacj� w `docs/biznes/SPEC.md` (Timer Pomodoro 25/5)
-- [x] 3. Zidentyfikuj zale�no�ci (Timer.jsx, FocusModeTimer.jsx - identyczne komponenty)
+- [x] 1. Zweryfikuj czy funkcjonalność jest mała (tak - zmiany CSS/SVG tylko)
+- [x] 2. Sprawdź dokumentację w `docs/biznes/SPEC.md` (Timer Pomodoro 25/5)
+- [x] 3. Zidentyfikuj zależności (Timer.jsx, FocusModeTimer.jsx - identyczne komponenty)
 - [x] 4. Przygotuj kodstarterowy (analiza obecnego kodu)
 
 **Testowanie po sekcji 1:**
-- Obecny kod u�ywa SVG z radius=60, svg=160x160
-- Progress zaczyna si� od prawej (3 o'clock) zamiast g�ry (12 o'clock)
-- Margines wok� timera jest niewystarczaj�cy (~20px)
+- Obecny kod używa SVG z radius=60, svg=160x160
+- Progress zaczyna się od prawej (3 o'clock) zamiast góry (12 o'clock)
+- Margines wokół timera jest niewystarczający (~20px)
 
 ---
 
 ## Sekcja 2: Analiza Problem�w
 
-### Problem 1: Zbyt ma�y okr�g
-- Obecny: radius=60px, svg 160x160 (margines 20px z ka�dej strony)
-- Efekt: okr�g nachodzi na czytelno�� licznika w centrum
+### Problem 1: Zbyt mały okrąg
+- Obecny: radius=60px, svg 160x160 (margines 20px z każdej strony)
+- Efekt: okrąg nachodzi na czytelność licznika w centrum
 
-### Problem 2: Nieprawid�owy punkt startowy animacji
-- SVG stroke domy�lnie zaczyna od prawej (3 o'clock)
-- Wymagane: start od g�ry (12 o'clock)
+### Problem 2: Nieprawidłowy punkt startowy animacji
+- SVG stroke domyślnie zaczyna od prawej (3 o'clock)
+- Wymagane: start od góry (12 o'clock)
 
 ---
 
 ## Sekcja 3: Propozycja Rozwi�zania
 
 ### Zmiany wizualne:
-1. **Zwi�kszy� rozmiar SVG i radius**:
-- svg: 160x160 � 200x200
-- radius: 60 � 80 (margines 20px zamiast 10px)
+1. **Zwiększył rozmiar SVG i radius**:
+- svg: 160x160 - 200x200
+- radius: 60 - 80 (margines 20px zamiast 10px)
   
 2. **Poprawi� punkt startowy animacji**:
-- Dodaj transformacj� CSS: transform: rotate(-90deg) do elementu progress circle
-- Alternatywnie: u�yj stroke-dashoffset z warto�ci� pocz�tkow� = circumference/4
+- Dodaj transformację CSS: transform: rotate(-90deg) do elementu progress circle
+- Alternatywnie: użyj stroke-dashoffset z wartością początkową = circumference/4
 
 ### Implementacja:
 - Edytuj Timer.jsx i FocusModeTimer.jsx (identyczne zmiany)
-- Zachowa� wszystkie style i animacje CSS
-- Nie zmienia� logiki hooka useTimer
+- Zachował wszystkie style i animacje CSS
+- Nie zmieniał logiki hooka useTimer
 
 ---
 
 ## Sekcja 4: Kroki Implementacyjne
 
 - [ ] 5. Zaktualizuj Timer.jsx:
-- Zwi�kszy� svg width/height z 160 na 200
-- Zwi�kszy� radius z 60 na 80
-- Doda� transform: rotate(-90deg) do progress circle
-- Dostosowa� pozycje element�w pozostaj�cych w centrum
+- Zwiększył svg width/height z 160 na 200
+- Zwiększył radius z 60 na 80
+- Dodał transform: rotate(-90deg) do progress circle
+- Dostosował pozycje elementów pozostających w centrum
 - [ ] 6. Zaktualizuj FocusModeTimer.jsx (to samo co Timer.jsx)
-- [ ] 7. Zweryfikuj responsywno�� - czy zmiany dzia�aj� na r�nych rozmiarach ekranu
+- [ ] 7. Zweryfikuj responsywność - czy zmiany działają na różnych rozmiarach ekranu
 
 ---
 
 ## Sekcja 5: Potencjalne Ryzyka i Edge Case'y
 
-1. **Responsywno��**: wi�kszy SVG mo�e nie pasowa� na ma�e ekrany
-- Mitigacja: doda� media queries dla ekran�w < 640px
+1. **Responsywność**: większy SVG może nie pasować na małe ekrany
+- Mitigacja: dodał media queries dla ekranów < 640px
   
-2. **Pozycjonowanie tekstu**: wi�kszy okr�g mo�e wymaga� korekty centralnego tekstu
-- Mitigacja: zachowa� absolute inset-0 z flexbox center
+2. **Pozycjonowanie tekstu**: większy okrąg może wymagać korekty centralnego tekstu
+- Mitigacja: zachował absolute inset-0 z flexbox center
   
-3. **Animacja obracania**: transform: rotate(-90deg) mo�e wp�yn�� na inne transformacje
-- Mitigacja: u�y� oddzielnego wrappera dla obrotu
+3. **Animacja obracania**: transform: rotate(-90deg) może wpłynąć na inne transformacje
+- Mitigacja: użył oddzielnego wrappera dla obrotu
 
 ---
 
 ## Sekcja 6: Testowanie
 
-- [ ] 8. Uruchom npm run dev i sprawd� wizualizacj�
-- [ ] 9. Zweryfikuj p�ynno�� animacji post�pu
-- [ ] 10. Sprawd� na r�nych rozmiarach okna przegl�darki
-- [ ] 11. Uruchom npm run build - build musi przej�� bez b��d�w
+- [ ] 8. Uruchom npm run dev i sprawdź wizualizację
+- [ ] 9. Zweryfikuj płynność animacji postępu
+- [ ] 10. Sprawdź na różych rozmiarach okna przeglądarki
+- [ ] 11. Uruchom npm run build - build musi przejść bez błędów
 
 **Kryteria akceptacji:**
-- Progress ring zaczyna si� od g�ry (12 o'clock)
-- Okr�g nie nachodzi na czytelny licznik w centrum
-- Utrzymany jest estetyczny margines wok� timera
-- Animacja post�pu dzia�a p�ynnie
+- Progress ring zaczyna się od góry (12 o'clock)
+- Okrąg nie nachodzi na czytelny licznik w centrum
+- Utrzymany jest estetyczny margines wokół timera
+- Animacja postępu działa płynnie
 
 ---
 
