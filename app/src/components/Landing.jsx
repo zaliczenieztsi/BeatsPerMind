@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import LearnMore from './LearnMore'
 
 export default function Landing() {
   return (
@@ -19,6 +20,7 @@ export default function Landing() {
           <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
         </Link>
       </div>
+      <LearnMore />
     </div>
   )
 }

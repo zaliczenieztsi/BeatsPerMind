@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Button } from './ui/button'
 import { findBestPlaylist } from '../utils/playlistMatcher'
 import playlistsData from '../data/playlists.json'
+import LearnMore from './LearnMore'
 
 export default function PlaylistView() {
   const navigate = useNavigate()
@@ -104,6 +105,7 @@ export default function PlaylistView() {
           Tryb Focus
         </Button>
       </div>
+      <LearnMore />
     </div>
   )
 }
