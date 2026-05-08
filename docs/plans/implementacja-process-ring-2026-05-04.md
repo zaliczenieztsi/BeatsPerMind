@@ -33,7 +33,7 @@
 - svg: 160x160 - 200x200
 - radius: 60 - 80 (margines 20px zamiast 10px)
   
-2. **Poprawi� punkt startowy animacji**:
+2. **Poprawić punkt startowy animacji**:
 - Dodaj transformację CSS: transform: rotate(-90deg) do elementu progress circle
 - Alternatywnie: użyj stroke-dashoffset z wartością początkową = circumference/4
 
@@ -86,6 +86,6 @@
 
 ## Uwagi
 
-- Projekt zmian jest ma�y - tylko modyfikacje CSS/SVG
+- Projekt zmian jest mały - tylko modyfikacje CSS/SVG
 - Nie wymaga zmian w logice biznesowej (useTimer.js)
-- Istniej� dwa identyczne komponenty (Timer.jsx + FocusModeTimer.jsx) - oba trzeba zaktualizowa�
+- Istnieją dwa identyczne komponenty (Timer.jsx + FocusModeTimer.jsx) - oba trzeba zaktualizować
