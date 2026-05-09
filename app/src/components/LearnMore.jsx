@@ -88,8 +88,8 @@ const FeatureCard = ({ icon: Icon, title, description }) => (
       <Icon className="w-5 h-5" strokeWidth={1.5} />
     </div>
     <div className="text-center">
-      <h4 className="text-sm font-semibold text-foreground mb-1 leading-tight">{title}</h4>
-      <p className="text-sm text-foreground/80 leading-relaxed break-words">{description}</p>
+      <h4 className="text-base font-semibold text-gray-800 mb-1 leading-tight">{title}</h4>
+      <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
     </div>
   </div>
 )
@@ -106,13 +106,13 @@ export default function LearnMore({ bpmRange } = {}) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between px-6 py-4 rounded-2xl bg-white/30 backdrop-blur-sm border border-white/40 text-left hover:bg-white/40 transition-all duration-300"
       >
-        <span className="font-medium text-foreground/80">
+        <span className="font-medium text-gray-700">
           {bpmRange
             ? `Twój dobór: ${bpmRange} BPM – dowiedz się więcej`
             : 'Dowiedz się więcej'}
         </span>
         <svg
-          className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 text-gray-500 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -123,13 +123,15 @@ export default function LearnMore({ bpmRange } = {}) {
 
       <div
         className={`${
-          isOpen ? 'max-h-[600px] opacity-100 mt-4' : 'max-h-0 opacity-0'
-        } transition-all duration-500 ease-in-out overflow-hidden`}
+          isOpen
+            ? 'max-h-[800px] opacity-100 mt-4'
+            : 'max-h-0 opacity-0'
+        } overflow-hidden transition-all duration-500 ease-in-out`}
       >
-        <div className="pt-4 px-2 py-5 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 space-y-5">
+        <div className="pt-4 px-2 pb-5 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 space-y-5">
           {!bpmRange ? (
             <div className="space-y-4">
-              <h3 className="font-medium text-foreground/90 text-sm mb-3">
+              <h3 className="font-medium text-gray-700 text-sm mb-3">
                 Jak działa dopasowywanie muzyki?
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -140,7 +142,7 @@ export default function LearnMore({ bpmRange } = {}) {
             </div>
           ) : (
             <div className="space-y-4">
-              <h3 className="font-medium text-foreground/90 text-sm mb-3">
+              <h3 className="font-medium text-gray-700 text-sm mb-3">
                 Twój dobór: {bpmRange} BPM
               </h3>
               {matchedCategory && (
