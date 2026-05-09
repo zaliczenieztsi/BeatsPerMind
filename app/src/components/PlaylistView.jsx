@@ -10,6 +10,7 @@ export default function PlaylistView() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [bestPlaylist, setBestPlaylist] = useState(null)
+  const [isPlaying, setIsPlaying] = useState(false)
 
   useEffect(() => {
     try {
@@ -60,7 +61,6 @@ export default function PlaylistView() {
   }
 
 const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.youtubePlaylistId}`
-const [isPlaying, setIsPlaying] = useState(false)
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-12">
