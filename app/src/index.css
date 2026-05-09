@@ -378,3 +378,30 @@ code {
     @apply bg-background text-foreground;}
   html {
     @apply font-sans;}}
+
+/* Video wrapper for relative positioning of play cover */
+.video-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-wrapper iframe {
+  position: relative;
+  z-index: 1;
+}
+
+/* Play cover overlay */
+.play-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+/* Play button circle */
+.play-button {
+  position: relative;
+  z-index: 20;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
