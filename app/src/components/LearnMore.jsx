@@ -53,18 +53,21 @@ const allFeatures = [
 
 const bpmCategories = [
   {
+    range: 'low',
     icon: Moon,
     title: 'Niskie BPM (40–60)',
     description:
       'Muzyka o tempie 40–60 BPM pozytywnie wpływa na koncentrację, redukcję stresu i wyciszenie organizmu. Jej spokojny rytm pomaga utrzymać skupienie podczas nauki, pracy czy czytania, a także wspiera relaks, medytację i przygotowanie do snu. Niskie BPM najlepiej sprawdza się przy aktywnościach wymagających spokoju, cierpliwości i równowagi, takich jak joga, spacer, stretching czy kreatywna praca.',
   },
   {
+    range: 'medium',
     icon: Target,
     title: 'Średnie BPM (60–100)',
     description:
       'Tempo 60–100 BPM jest idealnym zakresem do utrzymania koncentracji i produktywności podczas nauki i pracy umysłowej. Umiarkowany rytm pomaga utrzymać stabilny poziom energii bez przytłaczania, jednocześnie wspierając przyswajanie informacji i dłuższe okresy skupienia. Średnie BPM doskonale dopasowują się do sesji nauki, pracy biurowej czy czytania wymagających tekstów.',
   },
   {
+    range: 'high',
     icon: Zap,
     title: 'Wysokie BPM (100–160)',
     description:
