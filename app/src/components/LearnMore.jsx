@@ -55,20 +55,20 @@ const bpmCategories = [
   {
     icon: Moon,
     title: 'Niskie BPM (40–60)',
-    description: 'Idealne do relaksu, medytacji i lekkiego odpoczynku.',
-    range: 'low',
+    description:
+      'Muzyka o tempie 40–60 BPM pozytywnie wpływa na koncentrację, redukcję stresu i wyciszenie organizmu. Jej spokojny rytm pomaga utrzymać skupienie podczas nauki, pracy czy czytania, a także wspiera relaks, medytację i przygotowanie do snu. Niskie BPM najlepiej sprawdza się przy aktywnościach wymagających spokoju, cierpliwości i równowagi, takich jak joga, spacer, stretching czy kreatywna praca.',
   },
   {
     icon: Target,
     title: 'Średnie BPM (60–100)',
-    description: 'Doskonałe do nauki, pracy i utrzymania koncentracji.',
-    range: 'medium',
+    description:
+      'Tempo 60–100 BPM jest idealnym zakresem do utrzymania koncentracji i produktywności podczas nauki i pracy umysłowej. Umiarkowany rytm pomaga utrzymać stabilny poziom energii bez przytłaczania, jednocześnie wspierając przyswajanie informacji i dłuższe okresy skupienia. Średnie BPM doskonale dopasowują się do sesji nauki, pracy biurowej czy czytania wymagających tekstów.',
   },
   {
     icon: Zap,
     title: 'Wysokie BPM (100–160)',
-    description: 'Dają energię i motywację – świetne do treningu.',
-    range: 'high',
+    description:
+      'Muzyka o wyższym tempie 100–160 BPM daje energię i motywację – to idealny wybór do treningu, biegania czy intensywnej aktywności fizycznej. Dynamiczny rytm przyspiesza bicie serca, zwiększa wytrzymałość i pomaga utrzymać wysoki poziom energii przez cały trening. Wysokie BPM świetnie motywują także podczas sprzątania, gotowania czy innych aktywności wymagających dynamiki.',
   },
 ]
 
@@ -83,11 +83,11 @@ function getBpmRangeCategory(bpmString) {
 }
 
 const FeatureCard = ({ icon: Icon, title, description }) => (
-  <div className="feature-card flex gap-3 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 p-5 transition-all duration-300 hover:bg-white/30 hover:shadow-[0_8px_25px_-5px_rgba(129,178,154,0.15)] hover:scale-[1.02]">
+  <div className="feature-card flex flex-col items-center gap-3 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 p-5 transition-all duration-300 hover:bg-white/30 hover:shadow-[0_8px_25px_-5px_rgba(129,178,154,0.15)] hover:scale-[1.02]">
     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-bg text-accent-foreground">
       <Icon className="w-5 h-5" strokeWidth={1.5} />
     </div>
-    <div>
+    <div className="text-center">
       <h4 className="text-sm font-medium text-foreground/90 mb-1">{title}</h4>
       <p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
     </div>
@@ -121,10 +121,10 @@ export default function LearnMore({ bpmRange } = {}) {
         </svg>
       </button>
 
-      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[50rem] mt-4' : 'max-h-0'}`}>
+      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[60rem] mt-4' : 'max-h-0'}`}>
         <div className="px-2 py-5 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 space-y-5">
           {!bpmRange ? (
-            <div className="space-y-1">
+            <div className="space-y-4">
               <h3 className="font-medium text-foreground/90 text-sm mb-3">
                 Jak działa dopasowywanie muzyki?
               </h3>
@@ -135,7 +135,7 @@ export default function LearnMore({ bpmRange } = {}) {
               </div>
             </div>
           ) : (
-            <div className="space-y-1">
+            <div className="space-y-4">
               <h3 className="font-medium text-foreground/90 text-sm mb-3">
                 Twój dobór: {bpmRange} BPM
               </h3>

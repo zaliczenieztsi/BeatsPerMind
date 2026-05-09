@@ -19,13 +19,14 @@
 ## Sekcja 2: Implementacja
 
 - [x] 5. Zmodyfikowano LearnMore.jsx:
+  - Ikona nad tekstem (flex flex-col items-center), tekst wycentrowany
   - Landing (bez bpmRange): siatka 6 kart (3 kolumny x 2 wiersze) z kategoriami ogolnymi
-  - PlaylistView (z bpmRange): 1 karta dopasowana do kategorii BPM (niskie/srednie/wysokie)
+  - PlaylistView (z bpmRange): 1 karta dopasowana do kategorii BPM z rozszerzonym opisem
   - Dodano funkcje getBpmRangeCategory() mapujaca BPM string na kategorie
-  - Tablica bpmCategories z 3 kategoriami: Niskie/Średnie/Wysokie BPM
-  - Tablica allFeatures z 6 kartami ogolnymi
-  - Komponent FeatureCard z propsami icon, title, description
-  - Przycisk dynamicznie zmienia tresc w zaleznosci od bpmRange
+  - Tablica bpmCategories z 3 kategoriami i rozbudowanymi opisami:
+    - Niskie BPM (40–60): opis o koncentracji, redukcji stresu, relaksie, jodze
+    - Srednie BPM (60–100): opis o produktywnosci, nauce, pracy umyslowej
+    - Wysokie BPM (100–160): opis o energii, motywacji, treningu
 - [x] 6. Layout grid:
   - grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 (responsive)
   - gap-3 miedzy kartami
@@ -36,6 +37,7 @@
 - Zweryfikowano hover efekty na kartach
 - Zweryfikowano poprawna ikonowanie
 - Sprawdzono responsywnosc grid
+- Sprawdzono rozszerzone opisy w kartach BPM
 
 ---
 
@@ -48,7 +50,7 @@
 **Testowanie po sekcji 3:**
 - Build przeszedl pomyslnie
 - 6 kart w grid na Landing page
-- 1 karta pasujaca do BPM w PlaylistView
+- 1 karta pasujaca do BPM w PlaylistView z rozbudowanym opisem
 - Ikony lucide-react laduja prawidlowo
 - Responsywnosc zachowana
 - Stylizacja spojna z reszta aplikacji
