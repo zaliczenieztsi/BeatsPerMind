@@ -19,15 +19,21 @@
 ## Sekcja 2: Implementacja
 
 - [x] 5. Zmodyfikowano LearnMore.jsx:
-  - Ikona nad tekstem (flex flex-col items-center), tekst wycentrowany
+  - Ikona nad tekstem (flex-col items-center gap-3), tekst wycentrowany
   - Landing (bez bpmRange): siatka 6 kart (3 kolumny x 2 wiersze) z kategoriami ogolnymi
-  - PlaylistView (z bpmRange): 1 karta dopasowana do kategorii BPM z rozszerzonym opisem
+  - PlaylistView (z bpmRange): 1 karta dopasowana do kategorii BPM z rozbudowanym opisem
   - Dodano funkcje getBpmRangeCategory() mapujaca BPM string na kategorie
   - Tablica bpmCategories z 3 kategoriami i rozbudowanymi opisami:
-    - Niskie BPM (40–60): opis o koncentracji, redukcji stresu, relaksie, jodze
-    - Srednie BPM (60–100): opis o produktywnosci, nauce, pracy umyslowej
-    - Wysokie BPM (100–160): opis o energii, motywacji, treningu
-- [x] 6. Layout grid:
+    - Niskie BPM (40-60): opis o koncentracji, redukcji stresu, relaksie, jodze
+    - Srednie BPM (60-100): opis o produktywnosci, nauce, pracy umyslowej
+    - Wysokie BPM (100-160): opis o energii, motywacji, treningu
+- [x] 6. Naprawiono widocznosc tekstu:
+  - text-xs -> text-sm dla opisu
+  - font-medium -> font-semibold dla tytulu
+  - text-muted-foreground/text-xs -> text-foreground/80/text-sm dla lepszego kontrastu
+  - Dodano break-words dla dlugich slow
+  - Zmieniono animacje na opacity-based (max-h + opacity) dla plynniejszego otwierania
+- [x] 7. Layout grid:
   - grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 (responsive)
   - gap-3 miedzy kartami
 
@@ -38,6 +44,7 @@
 - Zweryfikowano poprawna ikonowanie
 - Sprawdzono responsywnosc grid
 - Sprawdzono rozszerzone opisy w kartach BPM
+- Zweryfikowano poprawna widocznosc tekstu (kontrast, rozmiar czcionki)
 
 ---
 
@@ -54,3 +61,4 @@
 - Ikony lucide-react laduja prawidlowo
 - Responsywnosc zachowana
 - Stylizacja spojna z reszta aplikacji
+- Tekst widoczny i czytelny na wszystkich kartach

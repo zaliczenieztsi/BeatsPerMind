@@ -88,8 +88,8 @@ const FeatureCard = ({ icon: Icon, title, description }) => (
       <Icon className="w-5 h-5" strokeWidth={1.5} />
     </div>
     <div className="text-center">
-      <h4 className="text-sm font-medium text-foreground/90 mb-1">{title}</h4>
-      <p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
+      <h4 className="text-sm font-semibold text-foreground mb-1 leading-tight">{title}</h4>
+      <p className="text-sm text-foreground/80 leading-relaxed break-words">{description}</p>
     </div>
   </div>
 )
@@ -121,8 +121,12 @@ export default function LearnMore({ bpmRange } = {}) {
         </svg>
       </button>
 
-      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[60rem] mt-4' : 'max-h-0'}`}>
-        <div className="px-2 py-5 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 space-y-5">
+      <div
+        className={`${
+          isOpen ? 'max-h-[600px] opacity-100 mt-4' : 'max-h-0 opacity-0'
+        } transition-all duration-500 ease-in-out overflow-hidden`}
+      >
+        <div className="pt-4 px-2 py-5 rounded-2xl bg-white/20 backdrop-blur-sm border border-white/30 space-y-5">
           {!bpmRange ? (
             <div className="space-y-4">
               <h3 className="font-medium text-foreground/90 text-sm mb-3">
