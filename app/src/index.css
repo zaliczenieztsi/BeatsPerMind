@@ -250,6 +250,13 @@ body {
     inset 0 0 80px rgba(255, 255, 255, 0.3);
 }
 
+/* FocusMode override - makes root transparent to show colored blobs */
+body.focus-mode #root {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
 h1,
 h2 {
   font-family: var(--heading);
