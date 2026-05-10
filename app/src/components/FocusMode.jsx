@@ -24,97 +24,34 @@ export default function FocusMode() {
 
   return (
     <div className="min-h-screen bg-transparent">
-      <div 
-        className="fixed inset-0 z-0 overflow-hidden"
-        style={{ margin: 0, padding: 0 }}
-      >
+      <div className="fixed inset-0 z-0 overflow-hidden" style={{ margin: 0, padding: 0 }}>
         <div 
-          style={{
-            position: 'absolute',
-            top: '4rem',
-            left: '4rem',
-            width: '16rem',
-            height: '16rem',
-            backgroundColor: '#99f6e4',
-            borderRadius: '50%',
-            filter: 'blur(20px)',
-            opacity: 0.5,
-            animation: 'pulse 2s ease-in-out infinite'
-          }}
+          className="absolute top-16 left-16 w-64 h-64 rounded-full bg-[#99f6e4] blur-[100px] animate-breathe z-[-1]"
+          style={{ opacity: 0.5 }}
         ></div>
         <div 
-          style={{
-            position: 'absolute',
-            top: '6rem',
-            right: '6rem',
-            width: '12rem',
-            height: '12rem',
-            backgroundColor: '#800020',
-            borderRadius: '50%',
-            filter: 'blur(20px)',
-            opacity: 0.5,
-            animation: 'pulse 2.5s ease-in-out infinite 0.5s'
-          }}
+          className="absolute top-24 right-24 w-48 h-48 rounded-full bg-[#800020] blur-[120px] animate-breathe z-[-1]"
+          style={{ opacity: 0.5, animationDelay: '2s' }}
         ></div>
         <div 
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: '30%',
-            width: '20rem',
-            height: '20rem',
-            backgroundColor: '#99f6e4',
-            borderRadius: '50%',
-            filter: 'blur(20px)',
-            opacity: 0.5,
-            animation: 'pulse 3s ease-in-out infinite 1s'
-          }}
+          className="absolute top-1/2 left-1/3 w-80 h-80 rounded-full bg-[#99f6e4] blur-[100px] animate-breathe z-[-1]"
+          style={{ opacity: 0.5, animationDelay: '4s' }}
         ></div>
         <div 
-          style={{
-            position: 'absolute',
-            bottom: '6rem',
-            right: '8rem',
-            width: '14rem',
-            height: '14rem',
-            backgroundColor: '#800020',
-            borderRadius: '50%',
-            filter: 'blur(20px)',
-            opacity: 0.5,
-            animation: 'pulse 2.2s ease-in-out infinite 1.5s'
-          }}
+          className="absolute bottom-24 right-32 w-56 h-56 rounded-full bg-[#800020] blur-[120px] animate-breathe z-[-1]"
+          style={{ opacity: 0.5, animationDelay: '1s' }}
         ></div>
         <div 
-          style={{
-            position: 'absolute',
-            bottom: '4rem',
-            left: '6rem',
-            width: '10rem',
-            height: '10rem',
-            backgroundColor: '#99f6e4',
-            borderRadius: '50%',
-            filter: 'blur(20px)',
-            opacity: 0.5,
-            animation: 'pulse 2.8s ease-in-out infinite 2s'
-          }}
+          className="absolute bottom-16 left-24 w-40 h-40 rounded-full bg-[#99f6e4] blur-[100px] animate-breathe z-[-1]"
+          style={{ opacity: 0.5, animationDelay: '3s' }}
         ></div>
         <div 
-          style={{
-            position: 'absolute',
-            top: '30%',
-            right: '30%',
-            width: '18rem',
-            height: '18rem',
-            backgroundColor: '#800020',
-            borderRadius: '50%',
-            filter: 'blur(20px)',
-            opacity: 0.5,
-            animation: 'pulse 3.2s ease-in-out infinite 0.8s'
-          }}
+          className="absolute top-1/3 right-1/3 w-72 h-72 rounded-full bg-[#800020] blur-[120px] animate-breathe z-[-1]"
+          style={{ opacity: 0.5, animationDelay: '5s' }}
         ></div>
       </div>
       <div className="max-w-md mx-auto px-6 py-12 space-y-8">
-        <div className="p-10 rounded-3xl bg-white/50 backdrop-blur-md border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in">
+        <div className="p-10 rounded-3xl bg-white/50 border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in">
           <Timer />
           <AmbientPlayer />
         </div>
