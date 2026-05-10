@@ -6,9 +6,9 @@ import { Button } from './ui/button'
 export default function FocusMode() {
   return (
     <div className="relative min-h-screen">
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-0 left-0 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-teal-soft/40 rounded-full blur-3xl animate-breathe"></div>
-        <div className="absolute bottom-0 right-0 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-maroon-muted/40 rounded-full blur-3xl animate-breathe" style={{ animationDelay: '2s' }}></div>
+      <div className="fixed inset-0 -z-10 overflow-hidden bg-slate-50"> {/* Dodałem jasne tło bazowe */}
+        <div className="absolute -top-20 -left-20 w-[400px] h-[400px] sm:w-[700px] sm:h-[700px] bg-teal-soft/50 rounded-full blur-[80px] animate-breathe"></div>
+        <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] sm:w-[700px] sm:h-[700px] bg-maroon-muted/30 rounded-full blur-[80px] animate-breathe" style={{ animationDelay: '2s' }}></div>
       </div>
       <div className="max-w-md mx-auto px-6 py-12 space-y-8">
         <div className="p-10 rounded-3xl bg-white/50 backdrop-blur-md border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in">
