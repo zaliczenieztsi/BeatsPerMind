@@ -6,15 +6,6 @@ import { useEffect } from 'react'
 
 export default function FocusMode() {
   useEffect(() => {
-    const style = document.createElement('style')
-    style.textContent = `
-      @keyframes breathe {
-        0%, 100% { background-position: 10% 20%, 90% 80%; }
-        50% { background-position: 15% 15%, 85% 85%; }
-      }
-    `
-    document.head.appendChild(style)
-    
     const root = document.getElementById('root')
     const originalBg = root.style.background
     const originalBackdrop = root.style.backdropFilter
@@ -26,7 +17,6 @@ export default function FocusMode() {
     document.body.style.background = '#e0f7fa'
 
     return () => {
-      document.head.removeChild(style)
       root.style.background = originalBg
       root.style.backdropFilter = originalBackdrop
       root.style.boxShadow = originalShadow
@@ -35,17 +25,15 @@ export default function FocusMode() {
   }, [])
 
   return (
-    <div 
-      className="min-h-screen"
-      style={{
-        backgroundImage: `
-          radial-gradient(500px circle at 15% 25%, #08999960 0%, transparent 70%),
-          radial-gradient(500px circle at 85% 75%, #991b1b60 0%, transparent 70%)
-        `,
-        backgroundSize: '200% 200%',
-        animation: 'breathe 8s ease-in-out infinite'
-      }}
-    >
+    <div className="min-h-screen">
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-16 left-16 w-64 h-64 bg-teal-soft rounded-full blur-[100px] animate-breathe"></div>
+        <div className="absolute top-32 right-24 w-[280px] h-[280px] bg-maroon-muted rounded-full blur-[100px] animate-breathe" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-48 right-48 w-80 h-80 bg-teal-accent rounded-full blur-[100px] animate-breathe" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-32 right-20 w-[350px] h-[350px] bg-maroon-muted rounded-full blur-[100px] animate-breathe" style={{ animationDelay: '0.5s' }}></div>
+        <div className="absolute bottom-16 left-32 w-64 h-64 bg-teal-soft rounded-full blur-[100px] animate-breathe" style={{ animationDelay: '1.5s' }}></div>
+        <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-teal-accent rounded-full blur-[100px] animate-breathe" style={{ animationDelay: '3s' }}></div>
+      </div>
       <div className="max-w-md mx-auto px-6 py-12 space-y-8">
         <div className="p-10 rounded-3xl bg-white/50 backdrop-blur-md border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in">
           <Timer />
