@@ -30,21 +30,6 @@
   50% { box-shadow: 0 0 40px rgba(129, 178, 154, 0.6); }
 }
 
-@keyframes breathe {
-  0%, 100% {
-    transform: scale(0.95);
-    opacity: 0.4;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.7;
-  }
-}
-
-.animate-breathe {
-  animation: breathe 10s ease-in-out infinite;
-}
-
 @keyframes aura-pulse {
   0%, 100% {
     transform: scale(0.8);
@@ -237,30 +222,25 @@
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+  @keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.8; }
 }
 
 body {
   margin: 0;
+  padding: 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa 0%, #f0f4f8 50%, #f8f9fa 100%);
+  width: 100%;
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid rgba(0, 0, 0, 0.05);
+  
   min-height: 100svh;
-  display: flex;
-  flex-direction: column;
   box-sizing: border-box;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
-  box-shadow: 
+  box-shadow:
     0 0 40px rgba(255, 255, 255, 0.8),
     inset 0 0 80px rgba(255, 255, 255, 0.3);
 }
