@@ -6,6 +6,15 @@ import { useEffect } from 'react'
 
 export default function FocusMode() {
   useEffect(() => {
+    const style = document.createElement('style')
+    style.textContent = `
+      @keyframes focusBreathe {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 0.9; }
+      }
+    `
+    document.head.appendChild(style)
+
     const root = document.getElementById('root')
     const originalBg = root.style.background
     const originalBackdrop = root.style.backdropFilter
@@ -16,7 +25,28 @@ export default function FocusMode() {
     root.style.boxShadow = 'none'
     document.body.style.background = '#e0f7fa'
 
+    const blobsContainer = document.createElement('div')
+    blobsContainer.id = 'focus-bg-blobs'
+    blobsContainer.style.cssText = `
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      overflow: hidden;
+      pointer-events: none;
+    `
+    blobsContainer.innerHTML = `
+      <div style="position: absolute; top: 4rem; left: 4rem; width: 16rem; height: 16rem; background: #089999; border-radius: 50%; filter: blur(100px); animation: focusBreathe 8s ease-in-out infinite;"></div>
+      <div style="position: absolute; top: 8rem; right: 6rem; width: 280px; height: 280px; background: #991b1b; border-radius: 50%; filter: blur(100px); animation: focusBreathe 8s ease-in-out infinite 1s;"></div>
+      <div style="position: absolute; top: 12rem; right: 12rem; width: 20rem; height: 20rem; background: #0d9488; border-radius: 50%; filter: blur(100px); animation: focusBreathe 8s ease-in-out infinite 2s;"></div>
+      <div style="position: absolute; bottom: 8rem; right: 5rem; width: 350px; height: 350px; background: #991b1b; border-radius: 50%; filter: blur(100px); animation: focusBreathe 8s ease-in-out infinite 0.5s;"></div>
+      <div style="position: absolute; bottom: 4rem; left: 8rem; width: 16rem; height: 16rem; background: #089999; border-radius: 50%; filter: blur(100px); animation: focusBreathe 8s ease-in-out infinite 1.5s;"></div>
+      <div style="position: absolute; top: 50%; left: 33%; width: 400px; height: 400px; background: #0d9488; border-radius: 50%; filter: blur(100px); animation: focusBreathe 8s ease-in-out infinite 3s;"></div>
+    `
+    document.body.appendChild(blobsContainer)
+
     return () => {
+      document.head.removeChild(style)
+      document.body.removeChild(blobsContainer)
       root.style.background = originalBg
       root.style.backdropFilter = originalBackdrop
       root.style.boxShadow = originalShadow
@@ -26,14 +56,6 @@ export default function FocusMode() {
 
   return (
     <div className="min-h-screen">
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-16 left-16 w-64 h-64 bg-teal-soft rounded-full blur-[100px] animate-breathe"></div>
-        <div className="absolute top-32 right-24 w-[280px] h-[280px] bg-maroon-muted rounded-full blur-[100px] animate-breathe" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-48 right-48 w-80 h-80 bg-teal-accent rounded-full blur-[100px] animate-breathe" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-32 right-20 w-[350px] h-[350px] bg-maroon-muted rounded-full blur-[100px] animate-breathe" style={{ animationDelay: '0.5s' }}></div>
-        <div className="absolute bottom-16 left-32 w-64 h-64 bg-teal-soft rounded-full blur-[100px] animate-breathe" style={{ animationDelay: '1.5s' }}></div>
-        <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-teal-accent rounded-full blur-[100px] animate-breathe" style={{ animationDelay: '3s' }}></div>
-      </div>
       <div className="max-w-md mx-auto px-6 py-12 space-y-8">
         <div className="p-10 rounded-3xl bg-white/50 backdrop-blur-md border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in">
           <Timer />
