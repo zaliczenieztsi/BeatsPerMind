@@ -2,13 +2,27 @@ import Timer from './Timer'
 import AmbientPlayer from './AmbientPlayer'
 import { Link } from 'react-router-dom'
 import { Button } from './ui/button'
+import { useEffect } from 'react'
 
 export default function FocusMode() {
+  useEffect(() => {
+    document.body.style.background = 'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%)'
+    document.getElementById('root').style.background = 'transparent'
+    document.getElementById('root').style.backdropFilter = 'none'
+    document.getElementById('root').style.boxShadow = 'none'
+    return () => {
+      document.body.style.background = ''
+      document.getElementById('root').style.background = ''
+      document.getElementById('root').style.backdropFilter = ''
+      document.getElementById('root').style.boxShadow = ''
+    }
+  }, [])
+
   return (
     <div className="relative min-h-screen">
-      <div className="fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[500px] h-[500px] sm:w-[800px] sm:h-[800px] bg-teal-soft rounded-full blur-3xl animate-breathe opacity-60"></div>
-        <div className="absolute -bottom-40 -right-40 w-[500px] h-[500px] sm:w-[800px] sm:h-[800px] bg-maroon-muted rounded-full blur-3xl animate-breathe opacity-60" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
+        <div className="absolute -top-48 -left-48 w-[700px] h-[700px] sm:w-[1000px] sm:h-[1000px] bg-teal-soft rounded-full blur-3xl animate-breathe opacity-80"></div>
+        <div className="absolute -bottom-48 -right-48 w-[700px] h-[700px] sm:w-[1000px] sm:h-[1000px] bg-maroon-muted rounded-full blur-3xl animate-breathe opacity-80" style={{ animationDelay: '2s' }}></div>
       </div>
       <div className="max-w-md mx-auto px-6 py-12 space-y-8">
         <div className="p-10 rounded-3xl bg-white/50 backdrop-blur-md border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in">
