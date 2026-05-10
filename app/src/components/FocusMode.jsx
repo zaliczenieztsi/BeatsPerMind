@@ -23,9 +23,9 @@ export default function FocusMode() {
   }, [])
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-transparent">
       <div 
-        className="fixed top-0 left-0 w-screen h-screen overflow-hidden -z-10"
+        className="fixed inset-0 z-0 overflow-hidden"
         style={{ margin: 0, padding: 0 }}
       >
         <div 

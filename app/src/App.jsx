@@ -8,9 +8,9 @@ import FocusMode from './components/FocusMode'
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-white">
         <Navigation />
-        <main className="flex-1">
+        <main className="w-full flex-1">
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/quiz" element={<Quiz />} />
