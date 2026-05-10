@@ -7,15 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'teal-soft': '#99f6e4',
-        'teal-accent': '#5eead4',
-        'maroon-muted': '#800020',
+        'teal-soft': '#0d9488',
+        'teal-accent': '#0f766e',
+        'maroon-muted': '#881337',
         'gray-light': '#f0f8ff',
       },
       keyframes: {
         breathe: {
-          '0%, 100%': { transform: 'scale(1)', opacity: '0.4' },
-          '50%': { transform: 'scale(1.1)', opacity: '0.7' },
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.5' },
+          '50%': { transform: 'scale(1.1)', opacity: '0.8' },
         },
       },
       animation: {
