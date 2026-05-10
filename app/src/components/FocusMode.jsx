@@ -8,70 +8,44 @@ export default function FocusMode() {
   useEffect(() => {
     const style = document.createElement('style')
     style.textContent = `
-      #root {
-        background: transparent !important;
-        backdrop-filter: none !important;
-        box-shadow: none !important;
-      }
-      body {
-        background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 50%, #e0f7fa 100%) !important;
-      }
-      #focus-bg-blobs {
-        position: fixed !important;
-        inset: 0 !important;
-        z-index: -1 !important;
-        overflow: hidden !important;
-        pointer-events: none !important;
-      }
-      #focus-bg-blobs > div {
-        position: absolute !important;
-        border-radius: 50% !important;
-      }
-      #focus-teal-blob {
-        top: -200px !important;
-        left: -200px !important;
-        width: 600px !important;
-        height: 600px !important;
-        background: #089999 !important;
-        filter: blur(100px) !important;
-        animation: focusBreathe 8s ease-in-out infinite !important;
-      }
-      #focus-maroon-blob {
-        bottom: -200px !important;
-        right: -200px !important;
-        width: 600px !important;
-        height: 600px !important;
-        background: #991b1b !important;
-        filter: blur(100px) !important;
-        animation: focusBreathe 8s ease-in-out infinite 2s !important;
-      }
-      @keyframes focusBreathe {
-        0%, 100% { transform: scale(1); opacity: 0.6; }
-        50% { transform: scale(1.15); opacity: 0.9; }
+      @keyframes breathe {
+        0%, 100% { background-position: 10% 20%, 90% 80%; }
+        50% { background-position: 15% 15%, 85% 85%; }
       }
     `
     document.head.appendChild(style)
     
-    const blobsContainer = document.createElement('div')
-    blobsContainer.id = 'focus-bg-blobs'
-    blobsContainer.innerHTML = `
-      <div id="focus-teal-blob"></div>
-      <div id="focus-maroon-blob"></div>
-    `
-    document.body.appendChild(blobsContainer)
+    const root = document.getElementById('root')
+    const originalBg = root.style.background
+    const originalBackdrop = root.style.backdropFilter
+    const originalShadow = root.style.boxShadow
+    
+    root.style.background = 'transparent'
+    root.style.backdropFilter = 'none'
+    root.style.boxShadow = 'none'
+    document.body.style.background = '#e0f7fa'
 
     return () => {
       document.head.removeChild(style)
-      document.body.removeChild(blobsContainer)
+      root.style.background = originalBg
+      root.style.backdropFilter = originalBackdrop
+      root.style.boxShadow = originalShadow
       document.body.style.background = ''
-      document.getElementById('root').style.background = ''
-      document.getElementById('root').style.backdropFilter = ''
-      document.getElementById('root').style.boxShadow = ''
     }
   }, [])
 
   return (
-    <div className="min-h-screen">
+    <div 
+      className="min-h-screen"
+      style={{
+        backgroundImage: `
+          radial-gradient(500px circle at 15% 25%, #08999960 0%, transparent 70%),
+          radial-gradient(500px circle at 85% 75%, #991b1b60 0%, transparent 70%)
+        `,
+        backgroundSize: '200% 200%',
+        animation: 'breathe 8s ease-in-out infinite'
+      }}
+    >
       <div className="max-w-md mx-auto px-6 py-12 space-y-8">
         <div className="p-10 rounded-3xl bg-white/50 backdrop-blur-md border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in">
           <Timer />
