@@ -40,22 +40,22 @@ export default function FocusModeTimer() {
         {/* Subtle progress ring - integrated */}
         <svg width="200" height="200" className="absolute transform -rotate-90 pointer-events-none">
           <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
-          <circle
-            cx="100"
-            cy="100"
-            r="90"
-            fill="none"
-            stroke={isRunning ? '#059669' : '#14B8A6'}
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeDasharray={`${2 * Math.PI * 90}`}
-            strokeDashoffset={`${2 * Math.PI * 90 - (progress / 100) * 2 * Math.PI * 90}`}
-            className="transition-all duration-1000 ease-out"
-            style={{ 
-              filter: 'drop-shadow(0 0 6px rgba(5, 150, 105, 0.4))',
-              opacity: 0.6
-            }}
-          />
+<circle
+             cx="100"
+             cy="100"
+             r="90"
+             fill="none"
+             stroke={isRunning ? '#059669' : '#14B8A6'}
+             strokeWidth="2"
+             strokeLinecap="round"
+             strokeDasharray={`${2 * Math.PI * 90}`}
+             strokeDashoffset={`${2 * Math.PI * 90 - (progress / 100) * 2 * Math.PI * 90}`}
+             className="transition-all duration-1000 ease-out"
+             style={{ 
+               filter: 'drop-shadow(0 0 6px rgba(5, 150, 105, 0.4))',
+               opacity: 0.6
+             }}
+           />
         </svg>
 
         {/* Soft ambient glow behind center content - extends beyond bounds for seamless blend */}
@@ -63,9 +63,9 @@ export default function FocusModeTimer() {
 
         {/* Center content - rounded + blur eliminates the sharp rectangle in both modes */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center rounded-full blur-[2px] px-10 py-4">
-          <h1 className="text-6xl font-light tracking-tight text-slate-700/75 mb-1">
-            {formattedTime}
-          </h1>
+<h1 className="text-6xl font-light tracking-tight text-[#800020]/75 mb-1">
+             {formattedTime}
+           </h1>
           <span className="text-sm font-medium uppercase tracking-[0.15em] text-[#800020]/60">
             Focus Time
           </span>
