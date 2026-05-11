@@ -27,13 +27,13 @@ export default function FocusModeTimer() {
       <div className="relative flex items-center justify-center w-[290px] h-[290px] overflow-visible">
         {/* Wave layer 1 - deep maroon glow */}
         <div className="absolute w-[270px] h-[270px] rounded-full bg-[#800020]/30 blur-[30px] animate-breathe" style={{ animationDelay: '0s' }} />
-        
+
         {/* Wave layer 2 - teal aura */}
         <div className="absolute w-[250px] h-[250px] rounded-full bg-teal-400/30 blur-[20px] animate-breathe" style={{ animationDelay: '0.5s' }} />
-        
+
         {/* Wave layer 3 - teal midtone */}
         <div className="absolute w-[230px] h-[230px] rounded-full bg-teal-500/30 blur-[10px] animate-breathe" style={{ animationDelay: '1s' }} />
-        
+
         {/* Wave layer 4 - main teal glow with glow effect */}
         <div className="absolute w-[210px] h-[210px] rounded-full bg-teal-500/30 blur-[5px] animate-breathe shadow-[0_0_40px_rgba(20,184,166,0.3)]" style={{ animationDelay: '1.5s' }} />
 
@@ -45,23 +45,23 @@ export default function FocusModeTimer() {
             cy="100"
             r="90"
             fill="none"
-            stroke={isRunning ? '#6EE7B7' : '#14B8A6'}
+            stroke={isRunning ? '#059669' : '#14B8A6'}
             strokeWidth="2"
             strokeLinecap="round"
             strokeDasharray={`${2 * Math.PI * 90}`}
             strokeDashoffset={`${2 * Math.PI * 90 - (progress / 100) * 2 * Math.PI * 90}`}
             className="transition-all duration-1000 ease-out"
             style={{ 
-              filter: 'drop-shadow(0 0 6px rgba(20, 184, 166, 0.3))',
+              filter: 'drop-shadow(0 0 6px rgba(5, 150, 105, 0.4))',
               opacity: 0.6
             }}
           />
         </svg>
 
-        {/* Soft ambient glow behind center content - seamless blend for both light and dark modes */}
+        {/* Soft ambient glow behind center content - extends beyond bounds for seamless blend */}
         <div className="absolute inset-[-20px] pointer-events-none rounded-full bg-gradient-radial from-teal-400/20 via-teal-300/10 to-transparent blur-[60px]" />
 
-        {/* Center content - rounded + blur eliminates the sharp rectangle in Light Mode */}
+        {/* Center content - rounded + blur eliminates the sharp rectangle in both modes */}
         <div className="relative z-10 flex flex-col items-center justify-center text-center rounded-full blur-[2px] px-10 py-4">
           <h1 className="text-6xl font-light tracking-tight text-slate-700/75 mb-1">
             {formattedTime}
