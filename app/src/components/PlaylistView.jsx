@@ -130,7 +130,7 @@ const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.
         </div>
 
         <div className="flex gap-4">
-          <Button asChild variant="outline" className="flex-1 rounded-2xl py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg bg-white/10 dark:bg-white/10 border-white/20 text-white hover:bg-white/20">
+          <Button asChild variant="outline" className="flex-1 rounded-2xl py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg bg-white/10 dark:bg-white/10 border-white/20 text-emerald-100 hover:bg-white/20 hover:text-emerald-200">
             <a
               href={bestPlaylist.spotifyUrl}
               target="_blank"
@@ -141,7 +141,7 @@ const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.
           </Button>
           <Button
             onClick={() => navigate('/focus')}
-            className="flex-1 rounded-2xl py-6 transition-all duration-300 hover:scale-[1.02] bg-white/15 dark:bg-white/10 border border-white/20 text-white hover:bg-white/25"
+            className="flex-1 rounded-2xl py-6 transition-all duration-300 hover:scale-[1.02] bg-white/15 dark:bg-white/10 border border-white/20 text-emerald-100 hover:bg-white/25 hover:text-emerald-200"
           >
             Tryb Focus
           </Button>
