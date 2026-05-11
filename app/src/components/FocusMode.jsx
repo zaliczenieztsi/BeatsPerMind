@@ -6,23 +6,24 @@ import { useEffect } from 'react'
 
 // Generate 15 random circles once (stable across renders)
 const circles = Array.from({ length: 15 }, (_, i) => {
-  const isMaroon = i < 8
+  // Distribute colors: 8 maroon, 7 teal - interleave them
+  const isMaroon = i % 2 === 0 || i > 14 // even indices + last if needed = 8 maroon
   
-  // Define hardcoded grid zones with random values within ranges
+  // Define 4 zones covering entire screen
   let baseTop, baseLeft
   
-  if (i >= 0 && i < 3) { // Circles 1-3: top 0-20%, left 0-80%
-    baseTop = Math.random() * 20
-    baseLeft = Math.random() * 80
-  } else if (i >= 3 && i < 7) { // Circles 4-7: top 30-60%, left 10-90%
-    baseTop = 30 + Math.random() * 30
-    baseLeft = 10 + Math.random() * 80
-  } else if (i >= 7 && i < 11) { // Circles 8-11: top 70-100%, left 0-40%
-    baseTop = 70 + Math.random() * 30
-    baseLeft = Math.random() * 40
-  } else { // Circles 12-15: top 70-100%, left 60-100%
-    baseTop = 70 + Math.random() * 30
-    baseLeft = 60 + Math.random() * 40
+  if (i < 4) { // Zone 1: top-left quadrant (0-50% top, 0-50% left)
+    baseTop = Math.random() * 45 + 5   // 5-50%
+    baseLeft = Math.random() * 45 + 5  // 5-50%
+  } else if (i < 8) { // Zone 2: top-right quadrant (0-50% top, 50-100% left)
+    baseTop = Math.random() * 45 + 5   // 5-50%
+    baseLeft = Math.random() * 45 + 50 // 50-95%
+  } else if (i < 11) { // Zone 3: bottom-left quadrant (50-100% top, 0-50% left)
+    baseTop = Math.random() * 45 + 50  // 50-95%
+    baseLeft = Math.random() * 45 + 5 // 5-50%
+  } else { // Zone 4: bottom-right quadrant (50-100% top, 50-100% left)
+    baseTop = Math.random() * 45 + 50  // 50-95%
+    baseLeft = Math.random() * 45 + 50 // 50-95%
   }
   
   const size = Math.floor(Math.random() * 200) + 300 // 300-500px
