@@ -7,21 +7,35 @@ import { useEffect } from 'react'
 // Generate 15 random circles once (stable across renders)
 const circles = Array.from({ length: 15 }, (_, i) => {
   const isMaroon = i < 8
-  const size = Math.floor(Math.random() * 200) + 150 // 150-350px
-  const top = Math.floor(Math.random() * 85) + 5 // 5-90% (keep within view)
-  const left = Math.floor(Math.random() * 85) + 5 // 5-90%
+  
+  // 3 columns x 5 rows grid
+  const col = i % 3 // 0, 1, 2
+  const row = Math.floor(i / 3) // 0-4
+  
+  // Base position for the grid cell (center of each cell)
+  const baseLeft = 16.67 + col * 33.33 // center of each column (0%, 33%, 66% -> centers at 16.67%, 50%, 83.33%)
+  const baseTop = 10 + row * 20 // center of each row (0%, 20%, 40%, 60%, 80% -> centers at 10%, 30%, 50%, 70%, 90%)
+  
+  // Random offset within the cell (+/- 10%)
+  const offsetX = (Math.random() - 0.5) * 20
+  const offsetY = (Math.random() - 0.5) * 20
+  
+  const left = baseLeft + offsetX
+  const top = baseTop + offsetY
+  
+  const size = Math.floor(Math.random() * 200) + 200 // 200-400px
   const delay = (Math.random() * 10).toFixed(1) // 0-10s
   const opacity = (Math.random() * 0.4 + 0.3).toFixed(2) // 0.3-0.7
   
   return {
     id: i,
     size,
-    top,
-    left,
+    top: `${top.toFixed(1)}%`,
+    left: `${left.toFixed(1)}%`,
     delay,
     opacity,
     colorClass: isMaroon ? 'bg-[#800020]' : 'bg-[#99f6e4]',
-    blurClass: 'blur-[100px]'
+    blurClass: 'blur-[120px]'
   }
 })
 
