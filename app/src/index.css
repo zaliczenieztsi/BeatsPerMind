@@ -379,12 +379,12 @@
        oklch(0.10 0.008 260 / 0.9) 50%,
        oklch(0.12 0.008 260 / 0.85) 100%
      );
-     border: 1px solid oklch(1 0 0 / 12%);
+     border: 1px solid oklch(1 0 0 / 10%);
      box-shadow:
        0 8px 32px -4px oklch(0 0 0 / 0.6),
        0 0 0 1px oklch(1 0 0 / 6%),
        inset 0 1px 0 oklch(1 0 0 / 5%),
-       0 0 40px rgba(20,184,166,0.12);
+       0 0 50px rgba(20,184,166,0.18);
    }
 
    /* Inner shadow depth for cards */
@@ -528,35 +528,36 @@
    }
 
    /* Dark mode button variations */
+   /* Subtle but more pronounced glow for main containers */
+   .dark .glow-card {
+     box-shadow: 0 20px 60px -15px rgba(0,0,0,0.5), 0 0 50px rgba(20,184,166,0.18);
+   }
+
+   /* Stronger button glows - more visible but still elegant */
    .dark .btn-glow {
-     box-shadow: 0 0 12px rgba(20,184,166,0.3);
+     box-shadow: 0 0 14px rgba(20,184,166,0.4);
    }
 
    .dark .btn-glow:hover {
-     box-shadow: 0 0 25px rgba(20,184,166,0.5);
+     box-shadow: 0 0 30px rgba(20,184,166,0.6);
    }
 
-   /* Suble glow for main containers */
-   .dark .glow-card {
-     box-shadow: 0 20px 60px -15px rgba(0,0,0,0.4), 0 0 40px rgba(20,184,166,0.12);
-   }
-
-   /* White glow for secondary elements */
+   /* White glow for secondary elements - enhanced */
    .dark .glow-white {
-     box-shadow: 0 0 12px rgba(255,255,255,0.15);
+     box-shadow: 0 0 14px rgba(255,255,255,0.2);
    }
 
    .dark .glow-white:hover {
-     box-shadow: 0 0 20px rgba(255,255,255,0.25);
+     box-shadow: 0 0 24px rgba(255,255,255,0.35);
    }
 
-   /* Red glow for destructive */
+   /* Red glow for destructive - enhanced */
    .dark .glow-destructive {
-     box-shadow: 0 0 12px rgba(239,68,68,0.3);
+     box-shadow: 0 0 14px rgba(239,68,68,0.4);
    }
 
    .dark .glow-destructive:hover {
-     box-shadow: 0 0 25px rgba(239,68,68,0.5);
+     box-shadow: 0 0 30px rgba(239,68,68,0.65);
    }
 
    /* Inset shadow utility */

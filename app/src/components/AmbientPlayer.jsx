@@ -59,7 +59,7 @@ export default function AmbientPlayer() {
               <div 
                 className="absolute inset-0 rounded-2xl pointer-events-none"
                 style={{
-                  boxShadow: 'inset 0 0 20px rgba(16, 185, 129, 0.2), 0 0 20px rgba(16, 185, 129, 0.15)',
+                  boxShadow: 'inset 0 0 20px rgba(16, 185, 129, 0.25), 0 0 30px rgba(20,184,166,0.45)',
                   animation: 'breathe 3s ease-in-out infinite'
                 }}
               />

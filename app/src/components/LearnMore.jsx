@@ -107,7 +107,7 @@ export default function LearnMore({ bpmRange } = {}) {
     <div className="w-full max-w-2xl mx-auto mt-2">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-background/30 backdrop-blur-sm border border-border text-left hover:bg-background/40 transition-all duration-300 dark:bg-[oklch(0.15_0.005_260/0.5)] dark:border-[oklch(1_0_0/10%)] dark:hover:bg-[oklch(0.18_0.008_260/0.7)] group"
+        className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-background/30 backdrop-blur-sm border border-border text-left hover:bg-background/40 transition-all duration-300 dark:bg-[oklch(0.15_0.005_260/0.5)] dark:border-[oklch(1_0_0/10%)] dark:hover:bg-[oklch(0.18_0.008_260/0.7)] group dark:shadow-[0_0_14px_rgba(255,255,255,0.2)] dark:hover:shadow-[0_0_24px_rgba(255,255,255,0.35)]"
       >
         <span className="font-medium text-foreground dark:text-[oklch(0.95_0.01_260)]">
           {bpmRange

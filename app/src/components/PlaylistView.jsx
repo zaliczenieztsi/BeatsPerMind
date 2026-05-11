@@ -72,7 +72,7 @@ const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-12">
-      <div className="p-8 rounded-3xl bg-background/40 backdrop-blur-sm border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] mb-8 dark:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4),0_0_40px_rgba(20,184,166,0.12)] dark:backdrop-blur-xl">
+      <div className="p-8 rounded-3xl bg-background/40 backdrop-blur-sm border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] mb-8 dark:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5),0_0_50px_rgba(20,184,166,0.18)] dark:backdrop-blur-xl">
          <h1 className="text-2xl font-light mb-2 dark:text-[oklch(0.95_0.01_260)]">{bestPlaylist.name}</h1>
          <p className="text-sm text-muted-foreground mb-2 dark:text-[oklch(0.65_0.01_260)]">
            BPM: {bestPlaylist.bpm}
