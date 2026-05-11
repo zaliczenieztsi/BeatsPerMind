@@ -58,15 +58,18 @@ export default function FocusModeTimer() {
           />
         </svg>
 
-        {/* Center content - directly on layers */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center">
-          <h1 className="text-6xl font-light tracking-tight text-slate-800 mb-1">
+        {/* Center content - organic cloud integration */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center rounded-full blur-[2px] px-8 py-4">
+          <h1 className="text-6xl font-light tracking-tight text-slate-700/90 mb-1">
             {formattedTime}
           </h1>
-          <span className="text-sm font-medium uppercase tracking-[0.15em] text-[#800020]">
+          <span className="text-sm font-medium uppercase tracking-[0.15em] text-[#800020]/80">
             Focus Time
           </span>
         </div>
+
+        {/* Soft overlay glow behind center content */}
+        <div className="absolute w-[180px] h-[180px] rounded-full bg-teal-400/10 blur-[30px]" />
       </div>
 
       {/* Control buttons */}
