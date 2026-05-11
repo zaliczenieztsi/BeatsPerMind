@@ -80,10 +80,10 @@ export default function FocusMode() {
          ))}
        </div>
        <div className="max-w-md mx-auto px-6 py-12 space-y-8 relative z-10">
-         <div className="bg-white/40 backdrop-blur-xl rounded-3xl p-10 border border-white/50 shadow-2xl relative z-10 dark:focus-container">
-           <Timer />
-           <AmbientPlayer />
-         </div>
+<div className="bg-white/40 backdrop-blur-xl rounded-3xl p-10 border border-white/50 shadow-2xl relative z-10 dark:focus-container space-y-8">
+            <Timer />
+            <AmbientPlayer />
+          </div>
          <div className="text-center animate-fade-in-up stagger-2">
            <Link to="/">
              <Button variant="link" className="text-sm transition-all duration-300 hover:opacity-70 dark:text-[oklch(0.75_0.01_260)]">
