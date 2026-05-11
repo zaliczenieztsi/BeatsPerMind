@@ -621,6 +621,103 @@
     animation: pulse-glow 2s ease-in-out infinite;
   }
 
+  /* Energy-specific cover overlays */
+  .cover-energetic {
+    background-color: oklch(0.22 0.1 220 / 0.5);
+  }
+
+  .cover-energetic:hover {
+    background-color: oklch(0.3 0.12 220 / 0.6);
+  }
+
+  .cover-calm {
+    background-color: oklch(0.25 0.12 25 / 0.5);
+  }
+
+  .cover-calm:hover {
+    background-color: oklch(0.32 0.15 25 / 0.6);
+  }
+
+  /* Energy-specific play buttons */
+  .btn-energetic {
+    background-color: oklch(0.35 0.12 220 / 0.35);
+    color: oklch(0.98 0.01 260);
+    box-shadow: 0 0 20px oklch(0.3 0.12 220 / 0.2);
+  }
+
+  .btn-energetic:hover {
+    background-color: oklch(0.45 0.15 220 / 0.5);
+    transform: scale(1.1);
+    box-shadow: 0 0 30px oklch(0.3 0.12 220 / 0.35);
+  }
+
+  .btn-calm {
+    background-color: oklch(0.35 0.15 25 / 0.35);
+    color: oklch(0.98 0.01 260);
+    box-shadow: 0 0 20px oklch(0.3 0.15 25 / 0.2);
+  }
+
+  .btn-calm:hover {
+    background-color: oklch(0.45 0.18 25 / 0.5);
+    transform: scale(1.1);
+    box-shadow: 0 0 30px oklch(0.3 0.15 25 / 0.35);
+  }
+
+  /* Energy-specific video wrapper backgrounds */
+  .bg-video-energetic {
+    background: oklch(0.08 0.02 220);
+  }
+
+  .bg-video-calm {
+    background: oklch(0.1 0.03 25);
+  }
+
+  /* Energy-specific aura colors */
+  .aura-energetic {
+    background-color: oklch(0.55 0.15 150);
+  }
+
+  .aura-calm {
+    background-color: oklch(0.4 0.2 0);
+  }
+
+  /* Dark mode overrides for energy cover/button */
+  .dark .cover-energetic {
+    background-color: oklch(0.15 0.08 220 / 0.6);
+  }
+
+  .dark .cover-energetic:hover {
+    background-color: oklch(0.25 0.12 220 / 0.75);
+  }
+
+  .dark .cover-calm {
+    background-color: oklch(0.18 0.1 25 / 0.6);
+  }
+
+  .dark .cover-calm:hover {
+    background-color: oklch(0.28 0.14 25 / 0.75);
+  }
+
+  .dark .btn-energetic {
+    background-color: oklch(0.3 0.12 220 / 0.5);
+    box-shadow: 0 0 20px oklch(0.3 0.12 220 / 0.3);
+  }
+
+  .dark .btn-energetic:hover {
+    background-color: oklch(0.4 0.15 220 / 0.65);
+    box-shadow: 0 0 35px oklch(0.3 0.12 220 / 0.4);
+  }
+
+  .dark .btn-calm {
+    background-color: oklch(0.35 0.15 25 / 0.5);
+    box-shadow: 0 0 20px oklch(0.35 0.15 25 / 0.3);
+  }
+
+  .dark .btn-calm:hover {
+    background-color: oklch(0.45 0.18 25 / 0.65);
+    box-shadow: 0 0 35px oklch(0.35 0.15 25 / 0.4);
+  }
+
    /* Breathe animation - slow, organic */
    @keyframes breathe {
      0%, 100% { transform: scale(1); opacity: 0.25; }

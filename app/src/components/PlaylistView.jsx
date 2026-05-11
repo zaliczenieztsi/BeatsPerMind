@@ -75,8 +75,8 @@ export default function PlaylistView() {
 const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.youtubePlaylistId}`
   
   const isEnergetic = isHighEnergy(bestPlaylist)
-  
-  const gradientStyles = isEnergetic 
+
+  const gradientStyles = isEnergetic
     ? 'radial-gradient(ellipse at center, oklch(0.25 0.08 210) 0%, oklch(0.15 0.05 240) 40%, oklch(0.1 0.03 260) 70%, oklch(0.05 0.02 270) 100%)'
     : 'radial-gradient(ellipse at center, oklch(0.2 0.1 0) 0%, oklch(0.15 0.05 0) 35%, oklch(0.12 0.02 260) 60%, oklch(0.08 0.01 260) 100%)'
 
@@ -90,9 +90,8 @@ const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.
       
       <div className="relative max-w-2xl mx-auto px-6 py-12 space-y-8">
         <div className="relative mb-8">
-          <div 
-            className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[300px] h-[200px] blur-[120px] opacity-20 rounded-full animate-pulse"
-            style={{ backgroundColor: isEnergetic ? 'oklch(0.55 0.15 150)' : 'oklch(0.4 0.2 0)' }}
+          <div
+            className={`absolute -bottom-16 left-1/2 -translate-x-1/2 w-[300px] h-[200px] blur-[120px] opacity-20 rounded-full animate-pulse ${isEnergetic ? 'aura-energetic' : 'aura-calm'}`}
           />
           
           <div className="relative p-8 rounded-3xl backdrop-blur-2xl bg-white/5 dark:bg-white/5 border border-white/10 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5),0_0_50px_rgba(85,100,120,0.2)]">
@@ -106,14 +105,16 @@ const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.
           </div>
         </div>
 
-        <div className="video-wrapper aspect-video mb-8 rounded-3xl overflow-hidden bg-black shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)]">
+        <div className={`video-wrapper aspect-video mb-8 rounded-3xl overflow-hidden ${isEnergetic ? 'bg-video-energetic' : 'bg-video-calm'} shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)]`}>
           {!isPlaying && (
             <div
-              className="play-cover absolute inset-0 flex items-center justify-center cursor-pointer rounded-3xl bg-black/40 backdrop-blur-sm transition-all duration-300 hover:bg-black/30"
+              className={`play-cover absolute inset-0 flex items-center justify-center cursor-pointer rounded-3xl backdrop-blur-sm transition-all duration-300 ${isEnergetic ? 'cover-energetic' : 'cover-calm'}`}
               onClick={() => setIsPlaying(true)}
             >
-              <div className="play-button w-16 h-16 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-110 hover:bg-white/30 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-                <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
+              <div
+                className={`play-button w-16 h-16 flex items-center justify-center rounded-full backdrop-blur-sm transition-all duration-300 ${isEnergetic ? 'btn-energetic' : 'btn-calm'}`}
+              >
+                <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
