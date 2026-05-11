@@ -89,6 +89,22 @@
 
 ---
 
+## Suggested Experiments
+
+1. **Landing page + pre-signup** - test komunikacji i zainteresowania (1 tydzień, $0)
+2. **5-10 wywiadów z studentami** - potwierdzenie value metrics (2 tygodnie, $0)
+3. **Small paid ad test** - kieruj na "muzyka do nauki", mierz CTR → signup (1 tydzień, $50)
+
+---
+
+## Szybki Eksperyment (priorytetowany)
+
+- Landing page + pre-signup (test komunikacji i willingness to pay)
+- 5-10 rozmów z targetem (potwierdzenie value metrics)
+- Small paid ad test (kieruj na jeden use case, mierz CTR → signup)
+
+---
+
 ## Checklista
 
 - [x] 1-stronicowa karta ICP

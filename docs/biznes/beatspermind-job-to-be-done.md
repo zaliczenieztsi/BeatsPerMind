@@ -103,6 +103,14 @@
 
 ---
 
+## Quick Experiments
+
+1. **Landing page** - "Get your study playlist in 30 seconds"
+2. **Pre-signup form** - pytanie o aktywność, email
+3. **Manual concierge** - 3 studentów dostaje playlistę na email
+
+---
+
 ## Metrics to Track
 
 - **Activation:** % users reaching desired outcome in first session

@@ -28,7 +28,31 @@ _Użytkownik uzna, że aplikacja warta jest $4.99/miesiąc, jeśli:_
 ### Aha Moment:
 > "To wygląda prosto - mogę mieć playlistę w 30 sekund"
 
-## Stage 2: First Data Input (3-5 minut)
+---
+
+## Stage 2: Sign-Up (1-3 minuty)
+
+### Flow:
+1. Email + Password
+2. Confirm email (instant link)
+3. Skip survey / Quick start
+4. Enter app
+
+### Friction Points:
+- [ ] Issue: 10+ pytań w formularzu
+  - **Solution:** Tylko email + hasło, reszta później
+- [ ] Issue: Wymaganie weryfikacji 2FA
+  - **Solution:** Nie wymagaj 2FA na start
+
+### Aha Moment:
+User sees main dashboard with "Get your playlist" button
+
+### Follow-up Email (5 min after):
+"**Cześć!** Kliknij tutaj, żeby dostać swoją pierwszą playlistę"
+
+---
+
+## Stage 3: First Data Input (3-5 minut)
 
 ### Input type:
 Kwestionariusz (3 pytania)
@@ -47,7 +71,7 @@ User clicks "Get Playlist" and sees matched results
 
 ---
 
-## Stage 3: Processing (5-10 sekund)
+## Stage 4: Processing (5-10 sekund)
 
 ### UX:
 - Progress bar with text: "Dopasowujemy playlistę..."
@@ -58,12 +82,12 @@ User clicks "Get Playlist" and sees matched results
 
 ---
 
-## Stage 4: First Output (10-30 sekund) ⭐ MOST CRITICAL
+## Stage 5: First Output (10-30 sekund) ⭐ MOST CRITICAL
 
 ### Output format:
 - Nazwa playlisty + BPM
 - YouTube embed (auto-play)
-- Przycisk "Otwórz w Spotify"
+- Przycisk "Otwórz w Spotify" (tylko Starter+)
 
 ### Visual Design:
 - User can instantly see: Playlist name, BPM, YouTube player
@@ -84,6 +108,50 @@ User clicks "Get Playlist" and sees matched results
 
 ---
 
+## Stage 6: Second Action (1-3 days later)
+
+### Trigger:
+- Email after 24h: "Gotów na kolejną playlistę?"
+- In-app widget: "Wypróbuj z inną aktywnością"
+
+### Message:
+"**Hej!** Twoja playlista do nauki czeka na Ciebie"
+
+### Goal:
+User performs second action WITHOUT email reminder
+
+### Success:
+Return Rate >40%
+
+### Friction Points:
+- [ ] Issue: Brak follow-up
+  - **Solution:** Automatyczny email po 24h
+
+---
+
+## Stage 7: Conversion (7-30 days)
+
+### Trigger:
+- Free trial ends (po 7 dni) OR hitting limit (5 playlist/dzień)
+
+### Message:
+"Twój darmowy okres się kończy. Zostajesz?"
+
+### Pricing:
+- **Starter:** $4.99/miesiąc
+- **Pro:** $9.99/miesiąc
+
+### CTA Button:
+"Przejdź na Starter - $4.99/miesiąc"
+
+### Friction Points:
+- [ ] Issue: Zbyt drogie
+  - **Solution:** A/B test $2.99 vs $4.99
+
+### Aha Moment:
+> "**Bez tego wrócę do szukania playlist na YouTube**"
+
+---
 
 ## Summary Metrics
 
@@ -114,13 +182,19 @@ User clicks "Get Playlist" and sees matched results
 
 | Mistake | Why It Fails | Fix |
 |---------|-----------|-----|
+| "Sign up → Settings → Dashboard → Upload Data" | User leaves before seeing value | Reorganize: Upload → Output → Then settings |
 | "Download extension first" | Friction before value | Offer web version in MVP |
 | "Invite team members before first success" | Solo user doesn't see why they'd invite | Let solo user win first, then suggest |
-| "Beautiful onboarding slides (7+ screens)" | Users skip all slides | 1 tip, rest learned by doing |
+| "Beautiful onboarding slides (7+ screens)" | Users skip all slides | 1 tip after sign-up, rest learned by doing |
 
 ---
 
 ## Post-Launch Monitoring (Metryki, które śledź)
+
+### Daily Metrics:
+- □ Landing → Sign-up: ___% (target: >5%)
+- □ Sign-up → First Output completion: ___% (target: >70%)
+- □ Time from sign-up to first output: ___ min (target: <5)
 
 ### Weekly Metrics:
 - □ Day 1 Return Rate: ___% (target: >40%)

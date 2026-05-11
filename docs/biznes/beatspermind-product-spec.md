@@ -175,6 +175,18 @@ Kwestionariusz (aktywność + poziom energii + typ muzyki) → dopasowana playli
 
 ---
 
+## 6. Stack technologiczny
+
+| Warstwa | Technologia | Uzasadnienie |
+|---------|-------------|--------------|
+| Frontend | React + Vite | Szybki setup, hot reload |
+| Styling | Tailwind CSS + Shadcn | Gotowe komponenty, modern look |
+| Stan | React useState / useContext | Wystarczy do MVP |
+| Backend | Firebase (Firestore) | Szybkie prototypowanie |
+| Auth | Firebase Auth | Opcjonalnie dla MVP |
+| Hosting | Vercel / Netlify | Darmowe dla projektów studenckich |
+| Audio | YouTube IFrame API | Bez OAuth, embed only |
+
 ### Struktura komponentów:
 ```
 src/
