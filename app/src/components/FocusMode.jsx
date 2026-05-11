@@ -8,30 +8,32 @@ import { useEffect } from 'react'
 const circles = Array.from({ length: 15 }, (_, i) => {
   const isMaroon = i < 8
   
-  // 3 columns x 5 rows grid
-  const col = i % 3 // 0, 1, 2
-  const row = Math.floor(i / 3) // 0-4
+  // Define hardcoded grid zones with random values within ranges
+  let baseTop, baseLeft
   
-  // Base position for the grid cell (center of each cell)
-  const baseLeft = 16.67 + col * 33.33 // center of each column (0%, 33%, 66% -> centers at 16.67%, 50%, 83.33%)
-  const baseTop = 10 + row * 20 // center of each row (0%, 20%, 40%, 60%, 80% -> centers at 10%, 30%, 50%, 70%, 90%)
+  if (i >= 0 && i < 3) { // Circles 1-3: top 0-20%, left 0-80%
+    baseTop = Math.random() * 20
+    baseLeft = Math.random() * 80
+  } else if (i >= 3 && i < 7) { // Circles 4-7: top 30-60%, left 10-90%
+    baseTop = 30 + Math.random() * 30
+    baseLeft = 10 + Math.random() * 80
+  } else if (i >= 7 && i < 11) { // Circles 8-11: top 70-100%, left 0-40%
+    baseTop = 70 + Math.random() * 30
+    baseLeft = Math.random() * 40
+  } else { // Circles 12-15: top 70-100%, left 60-100%
+    baseTop = 70 + Math.random() * 30
+    baseLeft = 60 + Math.random() * 40
+  }
   
-  // Random offset within the cell (+/- 10%)
-  const offsetX = (Math.random() - 0.5) * 20
-  const offsetY = (Math.random() - 0.5) * 20
-  
-  const left = baseLeft + offsetX
-  const top = baseTop + offsetY
-  
-  const size = Math.floor(Math.random() * 200) + 200 // 200-400px
+  const size = Math.floor(Math.random() * 200) + 300 // 300-500px
   const delay = (Math.random() * 10).toFixed(1) // 0-10s
   const opacity = (Math.random() * 0.4 + 0.3).toFixed(2) // 0.3-0.7
   
   return {
     id: i,
     size,
-    top: `${top.toFixed(1)}%`,
-    left: `${left.toFixed(1)}%`,
+    top: `${baseTop.toFixed(1)}%`,
+    left: `${baseLeft.toFixed(1)}%`,
     delay,
     opacity,
     colorClass: isMaroon ? 'bg-[#800020]' : 'bg-[#99f6e4]',
@@ -67,8 +69,9 @@ export default function FocusMode() {
             style={{
               width: `${circle.size}px`,
               height: `${circle.size}px`,
-              top: `${circle.top}%`,
-              left: `${circle.left}%`,
+              top: circle.top,
+              left: circle.left,
+              transform: 'translate(-50%, -50%)',
               opacity: circle.opacity,
               animationDelay: `${circle.delay}s`
             }}
