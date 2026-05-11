@@ -80,7 +80,7 @@ export default function FocusMode() {
         ))}
       </div>
       <div className="max-w-md mx-auto px-6 py-12 space-y-8 relative z-10">
-        <div className="p-10 rounded-3xl animate-scale-in">
+        <div className="bg-white/40 backdrop-blur-xl rounded-3xl p-10 border border-white/50 shadow-2xl relative z-10">
           <Timer />
           <AmbientPlayer />
         </div>
