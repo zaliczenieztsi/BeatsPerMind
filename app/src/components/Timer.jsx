@@ -18,9 +18,6 @@ export default function Timer() {
   const strokeDasharray = circumference
   const strokeDashoffset = circumference - (progress / 100) * circumference
 
-  // Color that softly pulses based on timer state
-  const pulseColor = isRunning ? '#6EE7B7' : '#A3E635'
-
   return (
     <div className="flex flex-col items-center gap-6">
       {/* Mode indicator and Pomodoro Counter */}
@@ -56,12 +53,11 @@ export default function Timer() {
             cy="100"
             r={radius}
             fill="none"
-            stroke={pulseColor}
+            className="dark:[stroke:oklch(0.55_0.15_150)] stroke-emerald-400"
             strokeWidth="4"
             strokeLinecap="round"
             strokeDasharray={strokeDasharray}
             strokeDashoffset={strokeDashoffset}
-            className="transition-all duration-1000 ease-out"
             style={{ strokeDashoffset, transform: 'rotate(-90deg)', transformOrigin: 'center' }}
           />
           {/* Subtle glow effect */}
@@ -70,7 +66,7 @@ export default function Timer() {
             cy="100"
             r={radius + 4}
             fill="none"
-            stroke={pulseColor}
+            className="dark:[stroke:oklch(0.55_0.15_150)] stroke-emerald-400"
             strokeWidth="1"
             opacity="0.15"
             strokeDasharray="10 5"
@@ -80,12 +76,20 @@ export default function Timer() {
         {/* Center time display */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           <h1
-            className={`text-5xl font-light tracking-tight transition-all duration-300 ${isRunning ? 'text-emerald-400 drop-shadow-lg animate-pulse-glow' : 'text-slate-700'}`}
+            className={`text-5xl font-light tracking-tight transition-all duration-300 ${
+              isRunning
+                ? 'dark:text-[oklch(0.95_0.05_150)] text-emerald-400 drop-shadow-lg dark:drop-shadow-[0_0_20px_rgba(16,185,129,0.4)] animate-pulse-glow'
+                : 'dark:text-[oklch(0.55_0.05_260)] text-slate-700'
+            }`}
           >
             {formattedTime}
           </h1>
           <span
-            className={`text-sm font-medium transition-all duration-500 ${isRunning ? 'text-emerald-500' : 'text-slate-400'}`}
+            className={`text-sm font-medium transition-all duration-500 ${
+              isRunning
+                ? 'dark:text-[oklch(0.7_0.1_150)] text-emerald-500'
+                : 'dark:text-[oklch(0.45_0.02_260)] text-slate-400'
+            }`}
           >
             {mode === 'work' ? 'Focus Time' : 'Break Time'}
           </span>
