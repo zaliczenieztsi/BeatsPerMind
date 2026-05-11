@@ -95,57 +95,42 @@
 
 ---
 
-# [2026-05-09] Dynamic Background for FocusMode
+# [Data: 2026-05-11] Adaptacyjne tło w PlaylistView z efektami wizualnymi
 
 ## Sekcja 1: Przygotowanie
-
-- [x] 1. Zweryfikowano czy funkcjonalnoĹ›Ä‡ jest maĹ‚a (jedna sekcja agenta) - tak, dotyczy konfiguracji Tailwind i jednego komponentu
-- [x] 2. Sprawdzono dokumentacjÄ™ w docs/biznes/SPEC.md - specyfikacja analizowana, tech stack poznany
-- [x] 3. Zidentyfikowano zaleĹĽnoĹ›ci:
-  - Plik: tailwind.config.js (dodanie wĹ‚asnych kolorĂłw)
-  - Plik: src/index.css (dodanie animacji @keyframes)
-  - Komponent: src/components/FocusMode.jsx (dynamiczne tĹ‚o)
-- [x] 4. Kodstarterowy przygotowany - przeanalizowano istniejÄ…ce pliki
+- [x] 1. Zweryfikowano czy funkcjonalność jest mała (jedna sekcja agenta) - tak, dotyczy tylko komponentu PlaylistView
+- [x] 2. Sprawdzono dokumentację w docs/biznes/SPEC.md - specyfikacja analizowana, struktura danych poznana
+- [x] 3. Zidentyfikowano zależności:
+  - Komponent: PlaylistView.jsx
+  - Dane: playlists.json (tagi energy: high/low/medium)
+- [x] 4. Kodstarterowy przygotowany - przeanalizowano istniejący komponent
 
 **Testowanie po sekcji 1:**
-- Zweryfikowano aktualnÄ… strukturÄ™ FocusMode.jsx
-- Sprawdzono formatowanie tailwind.config.js
+- Zidentyfikowano logikę: high energia = turkus-granat, low/medium = bordo-grafit
+- Tech Stack potwierdzony: React + Tailwind + shadcn/ui
 
 ---
 
 ## Sekcja 2: Implementacja
-
-- [x] 5. Zaktualizowano `tailwind.config.js` - dodaÄ‡ kolory:
-  - teal-soft: hsl(180, 50%, 90%) - do blaskĂłw
-  - teal-accent: hsl(180, 30%, 70%) - do akcentĂłw
-  - maroon-muted: hsl(340, 30%, 50%) - do tekstu i przyciskĂłw
-  - gray-light: hsl(210, 15%, 95%) - background
-- [x] 6. DodaÄ‡ animacjÄ™ w `src/index.css`:
-  - @keyframes breathe - subtelne przesuwanie (translate(5px, 10px))
-  - klasy animate-breathe dla pĹ‚ynnego ruchu
-- [x] 7. ZaktualizowaÄ‡ `FocusMode.jsx`:
-  - Dwa duĹĽe, przezroczyste bloki div (fixed inset-0)
-  - GĂłrny blok: blurred maroon accent (blur-3xl, slajd)
-  - Dolny blok: blurred teal (blur-3xl, slajd)
-  - Animacja breathe na blokach (zapÄ™tlona, wolna)
+- [x] 5. Dodano helper function `isHighEnergy(playlist)` do określania typu gradientu
+- [x] 6. Zaimplementowano adaptacyjny gradient radialny:
+  - Energetyczna: turkus-granat (oklch(0.25 0.08 210) → oklch(0.05 0.02 270))
+  - Spokojna: bordo-grafit (oklch(0.2 0.1 0) → oklch(0.08 0.01 260))
+- [x] 7. Dodano warstwę przyciemnienia `bg-slate-950/20` na całą stronę
+- [x] 8. Zaimplementowano efekt "Aura" pod kartą (blur-[120px], opacity-20, animate-pulse)
+- [x] 9. Zaktualizowano kartę wyników z `backdrop-blur-2xl bg-white/5`
+- [x] 10. Zaktualizowano kolory przycisków dla lepszej widoczności
 
 **Testowanie po sekcji 2:**
-- Zweryfikowano czy kolory sÄ… dostÄ™pne w Tailwind
-- Sprawdzono czy animacja dziaĹ‚a pĹ‚ynnie
-- Zweryfikowano czy tĹ‚o jest widoczne i przyjemne dla oka
+- Gradient prawidłowo dopasowuje się do energii playlisty
+- Aura pod kartą pulsuje
+- Karta jest szklana z przeźroczystym tłem
+- Tekst jest czytelny na ciemnym tle
 
 ---
 
 ## Sekcja 3: Walidacja i Finalizacja
-
-- [x] 10. Uruchomiono build (`npm run build`) - pomyĹ›lnie
-- [x] 11. Sprawdzono czy build przechodzi bez bĹ‚Ä™dĂłw - OK
-- [x] 12. Zweryfikowano czy aplikacja dziaĹ‚a poprawnie (dev server)
-- [x] 13. Zapisz plan w `docs/plans/zaimplementowane-plany.md`
-
-**Testowanie po sekcji 3:**
-- Build przeszedĹ‚ pomyĹ›lnie
-- FocusMode z nowym tĹ‚em dziaĹ‚a poprawnie
-- Animacja breathe jest subtelna i nie rozprasza
+- [x] 11. Build przeszedł pomyślnie (`npm run build`)
+- [x] 12. Zweryfikowano czy aplikacja działa poprawnie
 
 
