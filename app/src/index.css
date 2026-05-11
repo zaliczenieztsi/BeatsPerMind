@@ -718,19 +718,22 @@
     box-shadow: 0 0 35px oklch(0.35 0.15 25 / 0.4);
   }
 
-   /* Breathe animation - slow, organic */
+   /* Breathe animation - faster and more visible */
    @keyframes breathe {
-     0%, 100% { transform: scale(1); opacity: 0.25; }
-     50% { transform: scale(1.15); opacity: 0.45; }
+     0%, 100% { transform: scale(0.95); opacity: 0.35; }
+     50% { transform: scale(1.2); opacity: 0.75; }
    }
    .animate-breathe {
-     animation: breathe 10s ease-in-out infinite;
+      animation: breathe 4.5s ease-in-out infinite;
    }
-   /* Breathe animation - slow, organic */
-   @keyframes breathe-organic {
-     0%, 100% { transform: scale(1); opacity: 0.25; }
-     50% { transform: scale(1.12); opacity: 0.45; }
-   }
+    /* Breathe animation - faster and more visible */
+    @keyframes breathe {
+      0%, 100% { transform: scale(0.95); opacity: 0.35; }
+      50% { transform: scale(1.2); opacity: 0.75; }
+    }
+    .animate-breathe {
+      animation: breathe 4.5s ease-in-out infinite;
+    }
    .animate-breathe-organic {
      animation: breathe-organic 10s ease-in-out infinite;
    }

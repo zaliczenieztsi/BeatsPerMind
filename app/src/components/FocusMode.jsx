@@ -4,31 +4,31 @@ import { Link } from 'react-router-dom'
 import { Button } from './ui/button'
 import { useEffect } from 'react'
 
-// Generate 15 random circles once (stable across renders)
-const circles = Array.from({ length: 15 }, (_, i) => {
-  // Distribute colors: 8 maroon, 7 teal - interleave them
-  const isMaroon = i % 2 === 0 || i > 14 // even indices + last if needed = 8 maroon
+// Generate 25 random circles once (stable across renders)
+const circles = Array.from({ length: 25 }, (_, i) => {
+  // Distribute colors: 13 maroon, 12 teal - interleave them
+  const isMaroon = i % 2 === 0 || i > 22 // even indices + last if needed = 13 maroon
   
   // Define 4 zones covering entire screen
   let baseTop, baseLeft
-  
-  if (i < 4) {
+
+  if (i < 6) {
     baseTop = Math.random() * 45 + 5
     baseLeft = Math.random() * 45 + 5
-  } else if (i < 8) {
+  } else if (i < 12) {
     baseTop = Math.random() * 45 + 5
     baseLeft = Math.random() * 45 + 50
-  } else if (i < 11) {
+  } else if (i < 18) {
     baseTop = Math.random() * 45 + 50
     baseLeft = Math.random() * 45 + 5
   } else {
     baseTop = Math.random() * 45 + 50
     baseLeft = Math.random() * 45 + 50
   }
-  
+
   const size = Math.floor(Math.random() * 200) + 300
-  const delay = (Math.random() * 10).toFixed(1)
-  const opacity = (Math.random() * 0.4 + 0.3).toFixed(2) // 0.3-0.7
+  const delay = (Math.random() * 8).toFixed(1)
+  const opacity = (Math.random() * 0.5 + 0.4).toFixed(2) // 0.4-0.9 (more visible)
   
   return {
     id: i,
@@ -37,7 +37,7 @@ const circles = Array.from({ length: 15 }, (_, i) => {
     left: `${baseLeft.toFixed(1)}%`,
     delay,
     opacity,
-    colorClass: isMaroon ? 'bg-[#800020]' : 'bg-[#99f6e4]',
+    colorClass: isMaroon ? 'bg-[#c4185e]' : 'bg-[#2dd4bf]',
     blurClass: 'blur-[120px]'
   }
 })
