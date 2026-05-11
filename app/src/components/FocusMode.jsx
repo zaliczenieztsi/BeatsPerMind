@@ -4,28 +4,28 @@ import { Link } from 'react-router-dom'
 import { Button } from './ui/button'
 import { useEffect } from 'react'
 
-export default function FocusMode() {
-  // Generate 15 random circles with varied parameters
-  const circles = Array.from({ length: 15 }, (_, i) => {
-    const isMaroon = i < 8
-    const size = Math.floor(Math.random() * 48) + 32 // w-32 to w-80 (32-80)
-    const top = Math.floor(Math.random() * 90) // 0-90%
-    const left = Math.floor(Math.random() * 90) // 0-90%
-    const delay = (Math.random() * 10).toFixed(1) // 0-10s
-    const opacity = (Math.random() * 0.3 + 0.1).toFixed(2) // 0.1-0.4
-    
-    return {
-      id: i,
-      size,
-      top,
-      left,
-      delay,
-      opacity,
-      colorClass: isMaroon ? 'bg-[#800020]' : 'bg-[#99f6e4]',
-      blurClass: 'blur-[100px]'
-    }
-  })
+// Generate 15 random circles once (stable across renders)
+const circles = Array.from({ length: 15 }, (_, i) => {
+  const isMaroon = i < 8
+  const size = Math.floor(Math.random() * 200) + 150 // 150-350px
+  const top = Math.floor(Math.random() * 85) + 5 // 5-90% (keep within view)
+  const left = Math.floor(Math.random() * 85) + 5 // 5-90%
+  const delay = (Math.random() * 10).toFixed(1) // 0-10s
+  const opacity = (Math.random() * 0.4 + 0.3).toFixed(2) // 0.3-0.7
+  
+  return {
+    id: i,
+    size,
+    top,
+    left,
+    delay,
+    opacity,
+    colorClass: isMaroon ? 'bg-[#800020]' : 'bg-[#99f6e4]',
+    blurClass: 'blur-[100px]'
+  }
+})
 
+export default function FocusMode() {
   useEffect(() => {
     const root = document.getElementById('root')
     const originalBg = root.style.background
@@ -61,7 +61,7 @@ export default function FocusMode() {
           ></div>
         ))}
       </div>
-      <div className="max-w-md mx-auto px-6 py-12 space-y-8" style={{ position: 'relative', zIndex: 10 }}>
+      <div className="max-w-md mx-auto px-6 py-12 space-y-8 relative z-10">
         <div className="p-10 rounded-3xl animate-scale-in">
           <Timer />
           <AmbientPlayer />
