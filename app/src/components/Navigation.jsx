@@ -4,13 +4,13 @@ import ThemeToggle from './ThemeToggle'
 export default function Navigation() {
   return (
     <header className="border-b border-border bg-background/30 backdrop-blur-sm sticky top-0 z-50">
-      <div className="max-w-2xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div className="max-w-2xl mx-auto px-4 py-2.5 flex items-center justify-between">
         <NavLink to="/" className="font-light text-lg tracking-wide">
           BeatsPerMind
         </NavLink>
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <nav className="flex gap-6">
+          <nav className="flex gap-4">
             <NavLink
               to="/"
               className={({ isActive }) => 

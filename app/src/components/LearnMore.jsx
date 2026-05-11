@@ -104,10 +104,10 @@ export default function LearnMore({ bpmRange } = {}) {
   const matchedCategory = bpmCategories.find((c) => c.range === category)
 
   return (
-    <div className="w-full max-w-2xl mx-auto mt-8">
+    <div className="w-full max-w-2xl mx-auto mt-2">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-6 py-4 rounded-2xl bg-background/30 backdrop-blur-sm border border-border text-left hover:bg-background/40 transition-all duration-300"
+        className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-background/30 backdrop-blur-sm border border-border text-left hover:bg-background/40 transition-all duration-300"
       >
         <span className="font-medium text-foreground">
           {bpmRange
@@ -131,7 +131,7 @@ export default function LearnMore({ bpmRange } = {}) {
             : 'max-h-0 opacity-0'
         } overflow-hidden transition-all duration-500 ease-in-out`}
       >
-        <div className="pt-4 px-2 pb-5 rounded-2xl bg-background/20 backdrop-blur-sm border border-border space-y-5">
+        <div className="pt-3 px-2 pb-4 rounded-xl bg-background/20 backdrop-blur-sm border border-border space-y-4">
           {!bpmRange ? (
             <div className="space-y-4">
               <h3 className="font-medium text-foreground text-sm mb-3">
