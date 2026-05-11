@@ -17,11 +17,11 @@ export default function AmbientPlayer() {
   return (
     <div className="w-full space-y-5">
       <div className="text-center mb-5">
-        <p className="text-xs uppercase tracking-widest text-[#800020] mb-2">
+        <p className="text-xs uppercase tracking-widest text-[oklch(0.5_0.15_150)] mb-2">
           Ambient Sounds
         </p>
         {currentSound && (
-          <p className="font-light text-lg text-slate-700">
+          <p className="font-light text-lg text-[oklch(0.9_0.01_260)]">
             {currentSound.icon} {currentSound.name}
           </p>
         )}
@@ -34,14 +34,14 @@ export default function AmbientPlayer() {
             className={`
               relative rounded-2xl transition-all duration-300
               ${currentSound?.id === sound.id
-                ? 'bg-white/60 shadow-lg border-2 border-emerald-300/60 ring-2 ring-emerald-200/50' 
-                : 'bg-white/40 hover:bg-white/50 hover:shadow-md border border-white/60 hover:border-emerald-200/40'
+                ? 'bg-[oklch(0.2_0.08_150/0.5)] shadow-lg border-2 border-[oklch(0.5_0.15_150/0.6)] ring-2 ring-[oklch(0.45_0.15_150/0.4)]' 
+                : 'bg-[oklch(0.15_0.005_260/0.6)] hover:bg-[oklch(0.18_0.008_260/0.8)] hover:shadow-md border border-[oklch(1_0_0/10%)] hover:border-[oklch(0.45_0.1_150/0.3)]'
               }
             `}
           >
             <Button
               variant="ghost"
-              className="w-full h-auto py-4 flex flex-col items-center gap-2 rounded-2xl transition-all duration-300 hover:scale-105"
+              className="w-full h-auto py-4 flex flex-col items-center gap-2 rounded-2xl transition-all duration-300 hover:scale-105 text-[oklch(0.9_0.01_260)]"
               onClick={() => {
                 if (currentSound?.id === sound.id) {
                   togglePlay()
@@ -51,15 +51,15 @@ export default function AmbientPlayer() {
               }}
             >
               <span className="text-2xl">{sound.icon}</span>
-              <span className="text-xs font-medium text-slate-700">{sound.name}</span>
+              <span className="text-xs font-medium text-[oklch(0.8_0.01_260)]">{sound.name}</span>
             </Button>
-            
-            {/* Active sound indicator - subtle pulsing glow */}
+
+            {/* Active sound indicator - atmospheric glow */}
             {currentSound?.id === sound.id && (
               <div 
                 className="absolute inset-0 rounded-2xl pointer-events-none"
                 style={{
-                  boxShadow: 'inset 0 0 20px rgba(16, 185, 129, 0.2), 0 0 20px rgba(16, 185, 129, 0.15)',
+                  boxShadow: 'inset 0 0 30px oklch(0.45 0.15 150 / 0.3), 0 0 40px oklch(0.45 0.15 150 / 0.2)',
                   animation: 'breathe 3s ease-in-out infinite'
                 }}
               />
@@ -69,12 +69,12 @@ export default function AmbientPlayer() {
       </div>
 
       {currentSound && (
-        <div className="flex items-center gap-3 pt-4 border-t border-emerald-200/30">
+        <div className="flex items-center gap-3 pt-4 border-t border-[oklch(1_0_0/12%)]">
           <Button
             variant="ghost"
             size="icon"
             onClick={togglePlay}
-            className="shrink-0 rounded-full w-10 h-10 transition-all duration-300 hover:scale-110 bg-emerald-100/50 hover:bg-emerald-100"
+            className="shrink-0 rounded-full w-10 h-10 transition-all duration-300 hover:scale-110 bg-[oklch(0.2_0.08_150/0.4)] hover:bg-[oklch(0.25_0.08_150/0.6)] text-[oklch(0.9_0.01_260)]"
           >
             {isPlaying ? '❚❚' : '▶'}
           </Button>
@@ -97,7 +97,7 @@ export default function AmbientPlayer() {
             variant="ghost"
             size="sm"
             onClick={stopSound}
-            className="shrink-0 text-xs rounded-xl transition-all duration-300 hover:bg-red-50 text-red-600 hover:text-red-700"
+            className="shrink-0 text-xs rounded-xl transition-all duration-300 hover:bg-[oklch(0.577_0.2_25/0.2)] text-[oklch(0.65_0.2_25)] hover:text-[oklch(0.7_0.2_25)]"
           >
             Stop
           </Button>

@@ -26,20 +26,20 @@ const circles = Array.from({ length: 15 }, (_, i) => {
     baseLeft = Math.random() * 45 + 50 // 50-95%
   }
   
-  const size = Math.floor(Math.random() * 200) + 300 // 300-500px
-  const delay = (Math.random() * 10).toFixed(1) // 0-10s
-  const opacity = (Math.random() * 0.4 + 0.3).toFixed(2) // 0.3-0.7
+   const size = Math.floor(Math.random() * 200) + 300 // 300-500px
+   const delay = (Math.random() * 10).toFixed(1) // 0-10s
+   const opacity = (Math.random() * 0.35 + 0.25).toFixed(2) // 0.25-0.6 (more subtle)
   
-  return {
-    id: i,
-    size,
-    top: `${baseTop.toFixed(1)}%`,
-    left: `${baseLeft.toFixed(1)}%`,
-    delay,
-    opacity,
-    colorClass: isMaroon ? 'bg-[#800020]' : 'bg-[#99f6e4]',
-    blurClass: 'blur-[120px]'
-  }
+   return {
+     id: i,
+     size,
+     top: `${baseTop.toFixed(1)}%`,
+     left: `${baseLeft.toFixed(1)}%`,
+     delay,
+     opacity,
+     colorClass: isMaroon ? 'bg-[oklch(0.45_0.15_25/0.6)]' : 'bg-[oklch(0.45_0.1_170/0.6)]',
+     blurClass: 'blur-[120px]'
+   }
 })
 
 export default function FocusMode() {
@@ -60,38 +60,38 @@ export default function FocusMode() {
     }
   }, [])
 
-  return (
-    <div className="min-h-screen bg-transparent">
-      <div className="fixed inset-0 z-0 overflow-hidden" style={{ margin: 0, padding: 0 }}>
-        {circles.map(circle => (
-          <div
-            key={circle.id}
-            className={`absolute rounded-full ${circle.colorClass} ${circle.blurClass} animate-breathe`}
-            style={{
-              width: `${circle.size}px`,
-              height: `${circle.size}px`,
-              top: circle.top,
-              left: circle.left,
-              transform: 'translate(-50%, -50%)',
-              opacity: circle.opacity,
-              animationDelay: `${circle.delay}s`
-            }}
-          ></div>
-        ))}
-      </div>
-      <div className="max-w-md mx-auto px-6 py-12 space-y-8 relative z-10">
-        <div className="bg-white/40 backdrop-blur-xl rounded-3xl p-10 border border-white/50 shadow-2xl relative z-10">
-          <Timer />
-          <AmbientPlayer />
-        </div>
-        <div className="text-center animate-fade-in-up stagger-2">
-          <Link to="/">
-            <Button variant="link" className="text-sm transition-all duration-300 hover:opacity-70">
-              Powrót do strony głównej
-            </Button>
-          </Link>
-        </div>
-      </div>
-    </div>
-  )
+   return (
+     <div className="min-h-screen bg-transparent">
+       <div className="fixed inset-0 z-0 overflow-hidden" style={{ margin: 0, padding: 0 }}>
+         {circles.map(circle => (
+           <div
+             key={circle.id}
+             className={`absolute rounded-full ${circle.colorClass} ${circle.blurClass} animate-breathe`}
+             style={{
+               width: `${circle.size}px`,
+               height: `${circle.size}px`,
+               top: circle.top,
+               left: circle.left,
+               transform: 'translate(-50%, -50%)',
+               opacity: circle.opacity,
+               animationDelay: `${circle.delay}s`
+             }}
+           ></div>
+         ))}
+       </div>
+       <div className="max-w-md mx-auto px-6 py-12 space-y-8 relative z-10">
+         <div className="bg-[oklch(0.12_0.008_260/0.7)] backdrop-blur-2xl rounded-3xl p-10 border border-[oklch(1_0_0/10%)] shadow-[0_8px_32px_-4px_rgba(0,0,0,0.5),0_0_0_1px_oklch(1_0_0/6%)] relative z-10 focus-container">
+           <Timer />
+           <AmbientPlayer />
+         </div>
+         <div className="text-center animate-fade-in-up stagger-2">
+           <Link to="/">
+             <Button variant="link" className="text-sm transition-all duration-300 hover:opacity-70 text-[oklch(0.75_0.01_260)]">
+               Powrót do strony głównej
+             </Button>
+           </Link>
+         </div>
+       </div>
+     </div>
+   )
 }
