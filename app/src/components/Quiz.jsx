@@ -49,7 +49,7 @@ export default function Quiz() {
          </div>
        </div>
 
-       <div className="p-10 rounded-3xl bg-background/50 backdrop-blur-md border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] mb-8 animate-scale-in dark:card-depth-2 dark:backdrop-blur-xl">
+       <div className="p-10 rounded-3xl bg-background/50 backdrop-blur-md border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] mb-8 animate-scale-in dark:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4),0_0_40px_rgba(20,184,166,0.12)] dark:backdrop-blur-xl">
          <h2 className="text-2xl font-light text-center leading-relaxed mb-10 dark:text-[oklch(0.95_0.01_260)]">
            {currentQuestion.question}
          </h2>
@@ -59,14 +59,7 @@ export default function Quiz() {
              <Button
                key={option.value}
                variant={selectedValue === option.value ? 'default' : 'outline'}
-               className={`
-                 w-full h-auto py-5 px-6 rounded-2xl justify-start text-base transition-all duration-300
-                 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98]
-                 ${selectedValue === option.value
-                   ? 'dark:bg-[oklch(0.55_0.15_150)] dark:text-[oklch(0.08_0.01_260)] dark:border-[oklch(0.55_0.15_150)] dark:shadow-[0_4px_20px_oklch(0.55_0.15_150/0.4),0_0_30px_oklch(0.55_0.15_150/0.2)]'
-                   : 'dark:border-[oklch(1_0_0/12%)] dark:bg-[oklch(0.15_0.005_260/0.5)] dark:hover:bg-[oklch(0.18_0.008_260/0.7)] dark:hover:border-[oklch(0.5_0.15_150/0.4)] dark:text-[oklch(0.9_0.01_260)]'
-                 }
-               `}
+               className="w-full h-auto py-5 px-6 rounded-2xl justify-start text-base transition-all duration-300 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98]"
                style={{ animationDelay: `${index * 0.1}s` }}
                onClick={() => handleSelect(option.value)}
              >
@@ -89,11 +82,7 @@ export default function Quiz() {
          <Button
            onClick={handleNext}
            disabled={!selectedValue}
-           className={`
-             flex-1 rounded-2xl py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg
-             disabled:opacity-50 disabled:hover:scale-100
-             ${selectedValue ? 'dark:btn-glow dark:bg-[oklch(0.55_0.15_150)] dark:text-[oklch(0.08_0.01_260)]' : ''}
-           `}
+           className="flex-1 rounded-2xl py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg disabled:opacity-50 disabled:hover:scale-100"
          >
            {isComplete ? 'Zobacz playlistę' : 'Dalej'}
          </Button>

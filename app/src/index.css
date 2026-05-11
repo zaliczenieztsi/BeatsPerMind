@@ -314,7 +314,7 @@
      --accent: oklch(0.20 0.08 150);
      --accent-foreground: oklch(0.98 0.01 260);
      --destructive: oklch(0.65 0.2 25);
-     --border: oklch(1 0 0 / 8%);
+     --border: oklch(1 0 0 / 10%);
      --input: oklch(1 0 0 / 12%);
      --ring: oklch(0.5 0.12 150);
      --chart-1: oklch(0.9 0.08 150);
@@ -384,7 +384,7 @@
        0 8px 32px -4px oklch(0 0 0 / 0.6),
        0 0 0 1px oklch(1 0 0 / 6%),
        inset 0 1px 0 oklch(1 0 0 / 5%),
-       0 0 80px oklch(0.55 0.15 150 / 0.1);
+       0 0 40px rgba(20,184,166,0.12);
    }
 
    /* Inner shadow depth for cards */
@@ -529,15 +529,34 @@
 
    /* Dark mode button variations */
    .dark .btn-glow {
-     box-shadow:
-       0 4px 14px oklch(0.55 0.15 150 / 0.35),
-       0 0 25px oklch(0.55 0.15 150 / 0.2);
+     box-shadow: 0 0 12px rgba(20,184,166,0.3);
    }
 
    .dark .btn-glow:hover {
-     box-shadow:
-       0 6px 20px oklch(0.55 0.15 150 / 0.45),
-       0 0 35px oklch(0.55 0.15 150 / 0.3);
+     box-shadow: 0 0 25px rgba(20,184,166,0.5);
+   }
+
+   /* Suble glow for main containers */
+   .dark .glow-card {
+     box-shadow: 0 20px 60px -15px rgba(0,0,0,0.4), 0 0 40px rgba(20,184,166,0.12);
+   }
+
+   /* White glow for secondary elements */
+   .dark .glow-white {
+     box-shadow: 0 0 12px rgba(255,255,255,0.15);
+   }
+
+   .dark .glow-white:hover {
+     box-shadow: 0 0 20px rgba(255,255,255,0.25);
+   }
+
+   /* Red glow for destructive */
+   .dark .glow-destructive {
+     box-shadow: 0 0 12px rgba(239,68,68,0.3);
+   }
+
+   .dark .glow-destructive:hover {
+     box-shadow: 0 0 25px rgba(239,68,68,0.5);
    }
 
    /* Inset shadow utility */

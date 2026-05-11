@@ -72,7 +72,7 @@ const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-12">
-      <div className="p-8 rounded-3xl bg-background/40 backdrop-blur-sm border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] mb-8 dark:card-depth-2 dark:backdrop-blur-xl">
+      <div className="p-8 rounded-3xl bg-background/40 backdrop-blur-sm border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] mb-8 dark:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4),0_0_40px_rgba(20,184,166,0.12)] dark:backdrop-blur-xl">
          <h1 className="text-2xl font-light mb-2 dark:text-[oklch(0.95_0.01_260)]">{bestPlaylist.name}</h1>
          <p className="text-sm text-muted-foreground mb-2 dark:text-[oklch(0.65_0.01_260)]">
            BPM: {bestPlaylist.bpm}
@@ -82,7 +82,7 @@ const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.
         </p>
        </div>
 
-        <div className="video-wrapper aspect-video mb-8 rounded-3xl overflow-hidden bg-black shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] dark:bg-[oklch(0.08_0.01_260)] dark:shadow-[0_12px_40px_-5px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.05%)]">
+        <div className="video-wrapper aspect-video mb-8 rounded-3xl overflow-hidden bg-black shadow-[0_20px_60px_-15px_rgba(0,0,0,0.15)] dark:bg-[oklch(0.08_0.01_260)] dark:shadow-[0_12px_40px:-5px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.05%)]">
           {!isPlaying && (
             <div
               className="play-cover absolute inset-0 flex items-center justify-center cursor-pointer rounded-3xl bg-black/40 backdrop-blur-sm transition-all duration-300 dark:bg-[oklch(0_0_0/0.6)] dark:backdrop-blur-md hover:dark:bg-[oklch(0_0_0/0.5)]"
@@ -106,7 +106,7 @@ const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.
         </div>
 
        <div className="flex gap-4">
-         <Button asChild variant="outline" className="flex-1 rounded-2xl py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg dark:border-[oklch(1_0_0/12%)] dark:bg-[oklch(0.15_0.005_260/0.5)] dark:hover:bg-[oklch(0.18_0.008_260/0.7)] dark:text-[oklch(0.9_0.01_260)]">
+         <Button asChild variant="outline" className="flex-1 rounded-2xl py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
            <a
              href={bestPlaylist.spotifyUrl}
              target="_blank"
@@ -117,7 +117,7 @@ const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.
          </Button>
          <Button
            onClick={() => navigate('/focus')}
-           className="flex-1 rounded-2xl py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_30px_-5px_rgba(129,178,154,0.3)] dark:bg-[oklch(0.55_0.15_150)] dark:text-[oklch(0.08_0.01_260)] dark:hover:bg-[oklch(0.58_0.15_150)] dark:hover:shadow-[0_10px_30px_-5px_oklch(0.55_0.15_150/0.4)]"
+           className="flex-1 rounded-2xl py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_10px_30px_-5px_rgba(129,178,154,0.3)]"
          >
            Tryb Focus
          </Button>
