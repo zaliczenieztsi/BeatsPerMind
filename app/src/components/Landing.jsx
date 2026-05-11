@@ -3,7 +3,7 @@ import LearnMore from './LearnMore'
 
 export default function Landing() {
    return (
-<div className="min-h-[calc(100vh-100px)] flex flex-col items-center justify-center px-4 space-y-12">
+<div className="min-h-[calc(100vh-100px)] flex flex-col items-center justify-center px-4 pt-16 space-y-12">
         <div className="text-center space-y-7 p-14 rounded-3xl bg-background/50 backdrop-blur-md border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in dark:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5),0_0_50px_rgba(20,184,166,0.18)] dark:backdrop-blur-xl">
           <h1 className="text-6xl font-extralight tracking-wider text-foreground/90 animate-fade-in-up">
             BeatsPerMind
