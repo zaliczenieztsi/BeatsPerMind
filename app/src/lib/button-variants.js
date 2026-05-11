@@ -5,16 +5,16 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-[oklch(0.55_0.15_150)] text-[oklch(0.08_0.01_260)] hover:bg-[oklch(0.58_0.15_150)] hover:scale-[1.02] hover:shadow-[0_8px_20px_-5px_oklch(0.55_0.15_150/0.4),0_0_30px_oklch(0.55_0.15_150/0.15)]",
+        default: "bg-[oklch(0.55_0.05_160)] text-white hover:bg-[oklch(0.5_0.06_160)] hover:scale-[1.02] hover:shadow-[0_8px_20px_-5px_rgba(129,178,154,0.4)] dark:bg-[oklch(0.55_0.15_150)] dark:text-[oklch(0.08_0.01_260)] dark:hover:bg-[oklch(0.58_0.15_150)] dark:hover:shadow-[0_8px_20px_-5px_oklch(0.55_0.15_150/0.4),0_0_30px_oklch(0.55_0.15_150/0.15)]",
         outline:
-          "border-[oklch(1_0_0/12%)] bg-[oklch(0.15_0.005_260/0.5)] text-[oklch(0.9_0.01_260)] hover:bg-[oklch(0.18_0.008_260/0.7)] hover:border-[oklch(0.5_0.15_150/0.4)] dark:border-[oklch(1_0_0/12%)] dark:bg-[oklch(0.15_0.005_260/0.5)] dark:hover:bg-[oklch(0.18_0.008_260/0.7)]",
+          "border-border/50 bg-white/50 hover:bg-white/80 hover:border-border dark:border-[oklch(1_0_0/12%)] dark:bg-[oklch(0.15_0.005_260/0.5)] dark:hover:bg-[oklch(0.18_0.008_260/0.7)] dark:hover:border-[oklch(0.5_0.15_150/0.4)]",
         secondary:
-          "bg-[oklch(0.18_0.008_260)] text-[oklch(0.9_0.01_260)] hover:bg-[oklch(0.22_0.008_260)] border border-[oklch(1_0_0/10%)]",
+          "bg-secondary/70 text-secondary-foreground hover:bg-secondary/90 dark:bg-[oklch(0.18_0.008_260)] dark:text-[oklch(0.9_0.01_260)] dark:hover:bg-[oklch(0.22_0.008_260)] dark:border dark:border-[oklch(1_0_0/10%)]",
         ghost:
-          "hover:bg-[oklch(0.18_0.008_260/0.8)] hover:text-[oklch(0.95_0.01_260)] dark:hover:bg-[oklch(0.2_0.08_150/0.15)]",
+          "hover:bg-secondary/50 hover:text-foreground dark:hover:bg-[oklch(0.18_0.008_260/0.8)] dark:hover:text-[oklch(0.95_0.01_260)]",
         destructive:
-          "bg-[oklch(0.577_0.2_25/0.15)] text-[oklch(0.65_0.2_25)] hover:bg-[oklch(0.577_0.2_25/0.25)] hover:text-[oklch(0.7_0.2_25)] focus-visible:border-[oklch(0.65_0.2_25/0.4)] focus-visible:ring-[oklch(0.65_0.2_25/0.2)] dark:bg-[oklch(0.65_0.2_25/0.25)] dark:hover:bg-[oklch(0.65_0.2_25/0.35)] dark:focus-visible:ring-[oklch(0.65_0.2_25/0.4)]",
-        link: "text-[oklch(0.55_0.15_150)] underline-offset-4 hover:underline hover:text-[oklch(0.58_0.15_150)]",
+          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-[oklch(0.577_0.2_25/0.15)] dark:text-[oklch(0.65_0.2_25)] dark:hover:bg-[oklch(0.577_0.2_25/0.25)] dark:hover:text-[oklch(0.7_0.2_25)] dark:focus-visible:border-[oklch(0.65_0.2_25/0.4)] dark:focus-visible:ring-[oklch(0.65_0.2_25/0.2)]",
+        link: "text-[oklch(0.55_0.05_160)] underline-offset-4 hover:underline dark:text-[oklch(0.55_0.15_150)] dark:hover:text-[oklch(0.58_0.15_150)]",
       },
       size: {
         default:

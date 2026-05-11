@@ -34,23 +34,23 @@ export default function Quiz() {
      <div className="max-w-xl mx-auto px-6 py-12">
        <div className="mb-10 animate-fade-in-up">
          <div className="flex justify-between items-center mb-3">
-           <span className="text-xs uppercase tracking-widest text-[oklch(0.65_0.01_260)]">
+           <span className="text-xs uppercase tracking-widest text-muted-foreground dark:text-[oklch(0.65_0.01_260)]">
              Pytanie {currentStep + 1} z {questions.length}
            </span>
-           <span className="text-xs text-[oklch(0.65_0.01_260)]">
+           <span className="text-xs text-muted-foreground dark:text-[oklch(0.65_0.01_260)]">
              {Math.round(((currentStep + 1) / questions.length) * 100)}%
            </span>
          </div>
-         <div className="h-2 bg-[oklch(0.18_0.008_260/0.6)] rounded-full overflow-hidden border border-[oklch(1_0_0/8%)]">
+         <div className="h-2 bg-secondary/50 rounded-full overflow-hidden dark:bg-[oklch(0.18_0.008_260/0.6)] dark:border dark:border-[oklch(1_0_0/8%)]">
            <div
-             className="h-full bg-[oklch(0.55_0.15_150)] transition-all duration-700 ease-out rounded-full shadow-[0_0_12px_oklch(0.55_0.15_150/0.4)]"
+             className="h-full bg-[oklch(0.55_0.05_160)] transition-all duration-700 ease-out rounded-full dark:bg-[oklch(0.55_0.15_150)] dark:shadow-[0_0_12px_oklch(0.55_0.15_150/0.4)]"
              style={{ width: `${((currentStep + 1) / questions.length) * 100}%` }}
            />
          </div>
        </div>
 
-       <div className="p-10 rounded-3xl bg-[oklch(0.12_0.008_260/0.6)] backdrop-blur-xl border border-[oklch(1_0_0/10%)] shadow-[0_8px_32px_-4px_rgba(0,0,0,0.5),0_0_0_1px_oklch(1_0_0/6%)] mb-8 animate-scale-in card-depth-2">
-         <h2 className="text-2xl font-light text-[oklch(0.95_0.01_260)] text-center leading-relaxed mb-10">
+       <div className="p-10 rounded-3xl bg-background/50 backdrop-blur-md border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] mb-8 animate-scale-in dark:card-depth-2 dark:backdrop-blur-xl">
+         <h2 className="text-2xl font-light text-center leading-relaxed mb-10 dark:text-[oklch(0.95_0.01_260)]">
            {currentQuestion.question}
          </h2>
 
@@ -63,8 +63,8 @@ export default function Quiz() {
                  w-full h-auto py-5 px-6 rounded-2xl justify-start text-base transition-all duration-300
                  hover:scale-[1.02] hover:shadow-lg active:scale-[0.98]
                  ${selectedValue === option.value
-                   ? 'bg-[oklch(0.55_0.15_150)] text-[oklch(0.08_0.01_260)] border-[oklch(0.55_0.15_150)] shadow-[0_4px_20px_oklch(0.55_0.15_150/0.4),0_0_30px_oklch(0.55_0.15_150/0.2)]'
-                   : 'border-[oklch(1_0_0/12%)] bg-[oklch(0.15_0.005_260/0.5)] hover:bg-[oklch(0.18_0.008_260/0.7)] hover:border-[oklch(0.5_0.15_150/0.4)] text-[oklch(0.9_0.01_260)]'
+                   ? 'dark:bg-[oklch(0.55_0.15_150)] dark:text-[oklch(0.08_0.01_260)] dark:border-[oklch(0.55_0.15_150)] dark:shadow-[0_4px_20px_oklch(0.55_0.15_150/0.4),0_0_30px_oklch(0.55_0.15_150/0.2)]'
+                   : 'dark:border-[oklch(1_0_0/12%)] dark:bg-[oklch(0.15_0.005_260/0.5)] dark:hover:bg-[oklch(0.18_0.008_260/0.7)] dark:hover:border-[oklch(0.5_0.15_150/0.4)] dark:text-[oklch(0.9_0.01_260)]'
                  }
                `}
                style={{ animationDelay: `${index * 0.1}s` }}
@@ -81,7 +81,7 @@ export default function Quiz() {
            <Button 
              variant="ghost" 
              onClick={prevStep} 
-             className="flex-1 rounded-2xl py-6 hover:bg-[oklch(0.18_0.008_260/0.8)] transition-all duration-300 text-[oklch(0.9_0.01_260)]"
+             className="flex-1 rounded-2xl py-6 hover:bg-secondary/50 transition-all duration-300 dark:hover:bg-[oklch(0.18_0.008_260/0.8)] dark:text-[oklch(0.9_0.01_260)]"
            >
              Wstecz
            </Button>
@@ -92,7 +92,7 @@ export default function Quiz() {
            className={`
              flex-1 rounded-2xl py-6 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg
              disabled:opacity-50 disabled:hover:scale-100
-             ${selectedValue ? 'btn-glow bg-[oklch(0.55_0.15_150)] text-[oklch(0.08_0.01_260)]' : 'bg-[oklch(0.2_0.008_260)] text-[oklch(0.6_0.01_260)]'}
+             ${selectedValue ? 'dark:btn-glow dark:bg-[oklch(0.55_0.15_150)] dark:text-[oklch(0.08_0.01_260)]' : ''}
            `}
          >
            {isComplete ? 'Zobacz playlistę' : 'Dalej'}

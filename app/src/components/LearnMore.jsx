@@ -86,13 +86,13 @@ function getBpmRangeCategory(bpmString) {
 }
 
 const FeatureCard = ({ icon: Icon, title, description }) => (
-  <div className="feature-card flex flex-col items-center gap-3 rounded-2xl bg-[oklch(0.15_0.005_260/0.5)] backdrop-blur-sm border border-[oklch(1_0_0/10%)] p-5 transition-all duration-300 hover:bg-[oklch(0.18_0.008_260/0.7)] hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.4)] hover:border-[oklch(0.5_0.15_150/0.3)] hover:scale-[1.02]">
-    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[oklch(0.2_0.08_150/0.25)] text-[oklch(0.5_0.15_150)] border border-[oklch(0.5_0.15_150/0.3)]">
+  <div className="feature-card flex flex-col items-center gap-3 rounded-2xl bg-background/20 backdrop-blur-sm border border-border p-5 transition-all duration-300 hover:bg-background/30 hover:shadow-[0_8px_25px_-5px_rgba(129,178,154,0.15)] hover:scale-[1.02] dark:bg-[oklch(0.15_0.005_260/0.5)] dark:border-[oklch(1_0_0/10%)] dark:hover:bg-[oklch(0.18_0.008_260/0.7)] dark:hover:shadow-[0_8px_25px_-5px_rgba(0,0,0,0.4)] dark:hover:border-[oklch(0.5_0.15_150/0.3)]">
+    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent-bg text-accent-foreground dark:bg-[oklch(0.2_0.08_150/0.25)] dark:text-[oklch(0.5_0.15_150)] dark:border dark:border-[oklch(0.5_0.15_150/0.3)]">
       <Icon className="w-5 h-5" strokeWidth={1.5} />
     </div>
     <div className="text-center">
-      <h4 className="text-base font-semibold text-[oklch(0.95_0.01_260)] mb-1 leading-tight">{title}</h4>
-      <p className="text-sm text-[oklch(0.75_0.01_260)] leading-relaxed">{description}</p>
+      <h4 className="text-base font-semibold text-foreground mb-1 leading-tight dark:text-[oklch(0.95_0.01_260)]">{title}</h4>
+      <p className="text-sm text-muted-foreground leading-relaxed dark:text-[oklch(0.75_0.01_260)]">{description}</p>
     </div>
   </div>
 )
@@ -107,15 +107,15 @@ export default function LearnMore({ bpmRange } = {}) {
     <div className="w-full max-w-2xl mx-auto mt-2">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-[oklch(0.15_0.005_260/0.5)] backdrop-blur-sm border border-[oklch(1_0_0/10%)] text-left hover:bg-[oklch(0.18_0.008_260/0.7)] transition-all duration-300 group"
+        className="w-full flex items-center justify-between px-4 py-3 rounded-xl bg-background/30 backdrop-blur-sm border border-border text-left hover:bg-background/40 transition-all duration-300 dark:bg-[oklch(0.15_0.005_260/0.5)] dark:border-[oklch(1_0_0/10%)] dark:hover:bg-[oklch(0.18_0.008_260/0.7)] group"
       >
-        <span className="font-medium text-[oklch(0.95_0.01_260)]">
+        <span className="font-medium text-foreground dark:text-[oklch(0.95_0.01_260)]">
           {bpmRange
             ? `Twój dobór: ${bpmRange} BPM – dowiedz się więcej`
             : 'Dowiedz się więcej'}
         </span>
         <svg
-          className={`w-5 h-5 text-[oklch(0.65_0.01_260)] transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${isOpen ? 'rotate-180' : ''} dark:text-[oklch(0.65_0.01_260)]`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -131,10 +131,10 @@ export default function LearnMore({ bpmRange } = {}) {
             : 'max-h-0 opacity-0'
         } overflow-hidden transition-all duration-500 ease-in-out`}
       >
-        <div className="pt-3 px-2 pb-4 rounded-xl bg-[oklch(0.12_0.008_260/0.6)] backdrop-blur-sm border border-[oklch(1_0_0/10%)] space-y-4 inner-glow">
+        <div className="pt-3 px-2 pb-4 rounded-xl bg-background/20 backdrop-blur-sm border border-border space-y-4 dark:bg-[oklch(0.12_0.008_260/0.6)] dark:border-[oklch(1_0_0/10%)] inner-glow">
           {!bpmRange ? (
             <div className="space-y-4">
-              <h3 className="font-medium text-[oklch(0.95_0.01_260)] text-sm mb-3">
+              <h3 className="font-medium text-foreground text-sm mb-3 dark:text-[oklch(0.95_0.01_260)]">
                 Jak działa dopasowywanie muzyki?
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -145,7 +145,7 @@ export default function LearnMore({ bpmRange } = {}) {
             </div>
             ) : (
             <div className="space-y-4">
-              <h3 className="font-medium text-[oklch(0.95_0.01_260)] text-sm mb-3">
+              <h3 className="font-medium text-foreground text-sm mb-3 dark:text-[oklch(0.95_0.01_260)]">
                 Twój dobór: {bpmRange} BPM
               </h3>
               {matchedCategory && (
