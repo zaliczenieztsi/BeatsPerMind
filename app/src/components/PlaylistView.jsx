@@ -88,7 +88,7 @@ const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.
       />
       <div className="absolute inset-0 -z-10 bg-slate-950/20" />
       
-      <div className="relative max-w-2xl mx-auto px-6 py-12">
+      <div className="relative max-w-2xl mx-auto px-6 py-12 space-y-8">
         <div className="relative mb-8">
           <div 
             className="absolute -bottom-16 left-1/2 -translate-x-1/2 w-[300px] h-[200px] blur-[120px] opacity-20 rounded-full animate-pulse"
