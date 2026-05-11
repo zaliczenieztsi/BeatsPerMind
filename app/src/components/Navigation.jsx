@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle'
 
 export default function Navigation() {
   return (
@@ -7,40 +8,43 @@ export default function Navigation() {
         <NavLink to="/" className="font-light text-lg tracking-wide">
           BeatsPerMind
         </NavLink>
-        <nav className="flex gap-6">
-          <NavLink
-            to="/"
-            className={({ isActive }) => 
-              `text-sm transition-all duration-300 hover:opacity-70 ${isActive ? 'font-medium' : 'font-normal text-muted-foreground'}`
-            }
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/quiz"
-            className={({ isActive }) => 
-              `text-sm transition-all duration-300 hover:opacity-70 ${isActive ? 'font-medium' : 'font-normal text-muted-foreground'}`
-            }
-          >
-            Quiz
-          </NavLink>
-          <NavLink
-            to="/playlist"
-            className={({ isActive }) => 
-              `text-sm transition-all duration-300 hover:opacity-70 ${isActive ? 'font-medium' : 'font-normal text-muted-foreground'}`
-            }
-          >
-            Playlist
-          </NavLink>
-          <NavLink
-            to="/focus"
-            className={({ isActive }) => 
-              `text-sm transition-all duration-300 hover:opacity-70 ${isActive ? 'font-medium' : 'font-normal text-muted-foreground'}`
-            }
-          >
-            Focus
-          </NavLink>
-        </nav>
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          <nav className="flex gap-6">
+            <NavLink
+              to="/"
+              className={({ isActive }) => 
+                `text-sm transition-all duration-300 hover:opacity-70 ${isActive ? 'font-medium' : 'font-normal text-muted-foreground'}`
+              }
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/quiz"
+              className={({ isActive }) => 
+                `text-sm transition-all duration-300 hover:opacity-70 ${isActive ? 'font-medium' : 'font-normal text-muted-foreground'}`
+              }
+            >
+              Quiz
+            </NavLink>
+            <NavLink
+              to="/playlist"
+              className={({ isActive }) => 
+                `text-sm transition-all duration-300 hover:opacity-70 ${isActive ? 'font-medium' : 'font-normal text-muted-foreground'}`
+              }
+            >
+              Playlist
+            </NavLink>
+            <NavLink
+              to="/focus"
+              className={({ isActive }) => 
+                `text-sm transition-all duration-300 hover:opacity-70 ${isActive ? 'font-medium' : 'font-normal text-muted-foreground'}`
+              }
+            >
+              Focus
+            </NavLink>
+          </nav>
+        </div>
       </div>
     </header>
   )
