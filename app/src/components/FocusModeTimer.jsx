@@ -41,21 +41,21 @@ export default function FocusModeTimer() {
         <svg width="200" height="200" className="absolute transform -rotate-90 pointer-events-none">
           <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
 <circle
-             cx="100"
-             cy="100"
-             r="90"
-             fill="none"
-             stroke={isRunning ? '#059669' : '#14B8A6'}
-             strokeWidth="2"
-             strokeLinecap="round"
-             strokeDasharray={`${2 * Math.PI * 90}`}
-             strokeDashoffset={`${2 * Math.PI * 90 - (progress / 100) * 2 * Math.PI * 90}`}
-             className="transition-all duration-1000 ease-out"
-             style={{ 
-               filter: 'drop-shadow(0 0 6px rgba(5, 150, 105, 0.4))',
-               opacity: 0.6
-             }}
-           />
+              cx="100"
+              cy="100"
+              r="90"
+              fill="none"
+              stroke={isRunning ? '#800020' : '#14B8A6'}
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeDasharray={`${2 * Math.PI * 90}`}
+              strokeDashoffset={`${2 * Math.PI * 90 - (progress / 100) * 2 * Math.PI * 90}`}
+              className="transition-all duration-1000 ease-out"
+              style={{ 
+                filter: 'drop-shadow(0 0 6px rgba(128, 0, 32, 0.4))',
+                opacity: 0.6
+              }}
+            />
         </svg>
 
         {/* Soft ambient glow behind center content - extends beyond bounds for seamless blend */}
