@@ -25,17 +25,17 @@ export default function FocusModeTimer() {
 
       {/* Organic Breathing Visualizer - layered waves */}
       <div className="relative flex items-center justify-center w-[280px] h-[280px]">
-        {/* Wave layer 1 - deep maroon glow, blur 60px, largest */}
-        <div className="absolute w-[260px] h-[260px] rounded-full bg-[#800020]/10 blur-[60px] animate-breathe-outer" />
+        {/* Wave layer 1 - deep maroon glow */}
+        <div className="absolute w-[260px] h-[260px] rounded-full bg-[#800020]/30 blur-[30px] animate-breathe" style={{ animationDelay: '0s' }} />
         
-        {/* Wave layer 2 - teal aura, blur 40px */}
-        <div className="absolute w-[240px] h-[240px] rounded-full bg-teal-400/10 blur-[40px] animate-breathe-outer" style={{ animationDelay: '0.3s' }} />
+        {/* Wave layer 2 - teal aura */}
+        <div className="absolute w-[240px] h-[240px] rounded-full bg-teal-400/30 blur-[20px] animate-breathe" style={{ animationDelay: '0.5s' }} />
         
-        {/* Wave layer 3 - teal midtone, blur 20px */}
-        <div className="absolute w-[220px] h-[220px] rounded-full bg-teal-500/5 blur-[20px] animate-breathe-outer" style={{ animationDelay: '0.6s' }} />
+        {/* Wave layer 3 - teal midtone */}
+        <div className="absolute w-[220px] h-[220px] rounded-full bg-teal-500/30 blur-[10px] animate-breathe" style={{ animationDelay: '1s' }} />
         
-        {/* Wave layer 4 - main teal glow, blur 10px, slow pulse */}
-        <div className="absolute w-[200px] h-[200px] rounded-full bg-teal-500/10 blur-[10px] animate-breathe-organic" />
+        {/* Wave layer 4 - main teal glow with glow effect */}
+        <div className="absolute w-[200px] h-[200px] rounded-full bg-teal-500/30 blur-[5px] animate-breathe shadow-[0_0_40px_rgba(20,184,166,0.3)]" style={{ animationDelay: '1.5s' }} />
 
         {/* Subtle progress ring - integrated */}
         <svg width="200" height="200" className="absolute transform -rotate-90 pointer-events-none">
