@@ -4,7 +4,7 @@ import LearnMore from './LearnMore'
 export default function Landing() {
   return (
     <div className="min-h-[80vh] flex flex-col items-center justify-center px-4">
-      <div className="text-center space-y-8 p-14 rounded-3xl bg-white/50 backdrop-blur-md border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in">
+      <div className="text-center space-y-8 p-14 rounded-3xl bg-background/50 backdrop-blur-md border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in">
         <h1 className="text-5xl font-extralight tracking-wide text-foreground/90 animate-fade-in-up">
           BeatsPerMind
         </h1>

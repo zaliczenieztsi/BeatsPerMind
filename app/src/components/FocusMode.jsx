@@ -51,7 +51,7 @@ export default function FocusMode() {
         ></div>
       </div>
       <div className="max-w-md mx-auto px-6 py-12 space-y-8">
-        <div className="p-10 rounded-3xl bg-white/50 border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in">
+        <div className="p-10 rounded-3xl bg-background/50 border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] animate-scale-in">
           <Timer />
           <AmbientPlayer />
         </div>

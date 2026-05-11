@@ -64,7 +64,7 @@ const embedUrl = `https://www.youtube.com/embed/videoseries?list=${bestPlaylist.
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-12">
-      <div className="p-8 rounded-3xl bg-white/40 backdrop-blur-sm border border-white/50 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] mb-8">
+      <div className="p-8 rounded-3xl bg-background/40 backdrop-blur-sm border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.08)] mb-8">
          <h1 className="text-2xl font-light mb-2">{bestPlaylist.name}</h1>
          <p className="text-sm text-muted-foreground mb-2">
            BPM: {bestPlaylist.bpm}

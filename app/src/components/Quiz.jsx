@@ -49,7 +49,7 @@ export default function Quiz() {
         </div>
       </div>
 
-      <div className="p-10 rounded-3xl bg-white/50 backdrop-blur-md border border-white/60 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] mb-8 animate-scale-in">
+      <div className="p-10 rounded-3xl bg-background/50 backdrop-blur-md border border-border shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] mb-8 animate-scale-in">
         <h2 className="text-2xl font-light text-center leading-relaxed mb-10">
           {currentQuestion.question}
         </h2>
