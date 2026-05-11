@@ -66,25 +66,25 @@ export default function AmbientPlayer() {
       </div>
 
 {currentSound && (
-         <div className="flex items-center gap-3 pt-4 border-t border-emerald-200/30 dark:border-[oklch(1_0_0/12%)]">
-           <Button
-             variant="ghost"
-             size="icon"
-             onClick={togglePlay}
-             className="shrink-0 rounded-full w-10 h-10 transition-all duration-300 hover:scale-110 bg-emerald-100/50 hover:bg-emerald-100 dark:bg-[oklch(0.2_0.08_150/0.4)] dark:hover:bg-[oklch(0.25_0.08_150/0.6)] dark:text-[oklch(0.9_0.01_260)]"
-           >
-             {isPlaying ? '❚❚' : '▶'}
-           </Button>
-           <Button
-             variant="ghost"
-             size="sm"
-             onClick={stopSound}
-             className="shrink-0 text-xs rounded-xl transition-all duration-300 hover:bg-slate-100 text-slate-600 dark:hover:bg-[oklch(0.18_0.008_260/0.6)] dark:text-[oklch(0.55_0.01_260)]"
-           >
-             Stop
-           </Button>
-         </div>
-       )}
+          <div className="flex w-full justify-center items-center gap-3 pt-4 border-t border-emerald-200/30 dark:border-[oklch(1_0_0/12%)]">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={togglePlay}
+              className="shrink-0 rounded-full w-10 h-10 transition-all duration-300 hover:scale-110 bg-emerald-100/50 hover:bg-emerald-100 dark:bg-[oklch(0.2_0.08_150/0.4)] dark:hover:bg-[oklch(0.25_0.08_150/0.6)] dark:text-[oklch(0.9_0.01_260)]"
+            >
+              {isPlaying ? '❚❚' : '▶'}
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={stopSound}
+              className="shrink-0 text-xs rounded-xl transition-all duration-300 hover:bg-slate-100 text-slate-600 dark:hover:bg-[oklch(0.18_0.008_260/0.6)] dark:text-[oklch(0.55_0.01_260)]"
+            >
+              Stop
+            </Button>
+          </div>
+        )}
     </div>
   )
 }

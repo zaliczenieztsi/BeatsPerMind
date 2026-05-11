@@ -72,22 +72,22 @@ export default function FocusModeTimer() {
         </div>
       </div>
 
-      {/* Control buttons */}
-      <div className="flex gap-5">
-        <button
-          onClick={toggle}
-          className="rounded-full py-5 px-12 transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 min-w-[120px] text-sm font-medium bg-emerald-50 text-emerald-900 border-2 border-emerald-200/60 hover:border-emerald-300/60"
-          style={{ boxShadow: '0 0 20px rgba(16, 185, 129, 0.1)' }}
-        >
-          {isRunning ? 'Pause' : 'Start'}
-        </button>
-        <button 
-          onClick={reset} 
-          className="rounded-full py-5 px-8 transition-all duration-300 hover:bg-white/60 hover:scale-105 active:scale-95 text-sm font-medium border-2 border-slate-200/60 hover:border-slate-300/60 bg-white/40"
-        >
-          Reset
-        </button>
-      </div>
+    {/* Control buttons */}
+    <div className="flex gap-5">
+      <button
+        onClick={toggle}
+        className="rounded-full py-5 px-12 transition-all duration-300 hover:scale-105 hover:shadow-lg active:scale-95 min-w-[120px] text-sm font-medium bg-emerald-50 text-emerald-900 border-2 border-emerald-200/60 hover:border-emerald-300/60"
+        style={{ boxShadow: '0 0 20px rgba(16, 185, 129, 0.1)' }}
+      >
+        {isRunning ? 'Pause' : 'Start'}
+      </button>
+      <button 
+        onClick={reset} 
+        className="rounded-full py-5 px-8 transition-all duration-300 hover:bg-white/60 hover:scale-105 active:scale-95 text-sm font-medium border-2 border-slate-200/60 hover:border-slate-300/60 bg-white/40"
+      >
+        Reset
+      </button>
+    </div>
     </div>
   )
 }
