@@ -2,28 +2,28 @@ export const ambientSounds = [
   {
     id: 'rain',
     name: 'Deszcz',
-    icon: '🌧️',
+    icon: '☔︎︎',
     src: '/sounds/rain.mp3',
     color: '#3B82F6'
   },
   {
     id: 'white-noise',
     name: 'Biały szum',
-    icon: '📻',
+    icon: '♒︎',
     src: '/sounds/white-noise.mp3',
     color: '#8B5CF6'
   },
   {
     id: 'cafe',
     name: 'Kawiarnia',
-    icon: '☕',
+    icon: '☕︎',
     src: '/sounds/cafe.mp3',
     color: '#F59E0B'
   },
   {
     id: 'forest',
     name: 'Las',
-    icon: '🌲',
+    icon: '𖠰',
     src: '/sounds/forest.mp3',
     color: '#10B981'
   }
