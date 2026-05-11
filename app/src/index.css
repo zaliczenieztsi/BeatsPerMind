@@ -374,3 +374,12 @@
     z-index: 20;
     animation: pulse-glow 2s ease-in-out infinite;
   }
+
+  /* Breathe animation */
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.2); opacity: 0.6; }
+  }
+  .animate-breathe {
+    animation: breathe 8s ease-in-out infinite;
+  }
