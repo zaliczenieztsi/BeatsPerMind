@@ -4,6 +4,8 @@
 
 ---
 
+link do strony: https://beats-per-mind2-byx3a6i1a-zaliczenieztsis-projects.vercel.app/
+
 ## 📋 Opis Projektu
 
 BeatsPerMind to aplikacja webowa dla studentów, która generuje playlisty muzyczne dopasowane do:
