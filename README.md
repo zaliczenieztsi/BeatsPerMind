@@ -4,7 +4,7 @@
 
 ---
 
-link do strony: https://beats-per-mind2-byx3a6i1a-zaliczenieztsis-projects.vercel.app/
+link do strony: [https://beats-per-mind2-byx3a6i1a-zaliczenieztsis-projects.vercel.app/](https://beats-per-mind2-zaliczenieztsis-projects.vercel.app/)
 
 ## 📋 Opis Projektu
 
