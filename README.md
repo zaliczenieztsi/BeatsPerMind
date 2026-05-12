@@ -20,7 +20,7 @@ Dodatkowo aplikacja oferuje **Focus Mode** - timer Pomodoro z wbudowanymi dźwi�
 > [!IMPORTANT]
 > **Kontekst dokumentacji:**
 > * Dokumentacja zgromadzona w katalogu [`docs/biznes`](docs/biznes) opisuje **pełną, docelową wizję aplikacji** (tzw. *Full Product Vision*).
-> * Obecnie opublikowana aplikacja to **pierwsza stabilna wersja działająca**. Jej szczegółowy opis, aktualny zakres funkcjonalny oraz strukturę techniczną znajdziesz w pliku [`system_overview.md`](system_overview.md).
+> * Obecnie opublikowana aplikacja to **pierwsza stabilna wersja działająca**. Jej szczegółowy opis, aktualny zakres funkcjonalny oraz strukturę techniczną znajdziesz w pliku [`system_overview.md`](docs/architektura/system_overview.md).
 
 ---
 
