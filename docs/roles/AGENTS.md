@@ -6,21 +6,10 @@
 
 Wszystkie szczegóły projektu znajdują się w katalogu `docs/biznes`:
 
-| # | Dokument | Opis |
-|---|----------|------|
-| 2 | [`beatspermind-business-plan.md`](biznes/beatspermind-business-plan.md) | Pełna analiza biznesowa |
-| 3 | [`beatspermind-product-spec.md`](docs/biznes/beatspermind-product-spec.md) | Specyfikacja produktu |
-| 4 | [`beatspermind-kill-the-idea.md`](docs/biznes/beatspermind-kill-the-idea.md) | Analiza ryzyka - werdykt PIVOT |
-| 5 | [`beatspermind-competitor-audit.md`](docs/biznes/beatspermind-competitor-audit.md) | Analiza 8 konkurentów |
-| 6 | [`beatspermind-icp-persona.md`](docs/biznes/beatspermind-icp-persona.md) | Profil idealnego klienta |
-| 7 | [`beatspermind-job-to-be-done.md`](docs/biznes/beatspermind-job-to-be-done.md) | Analiza potrzeb użytkownika |
-| 8 | [`beatspermind-mvp-scoping.md`](docs/biznes/beatspermind-mvp-scoping.md) | Zakres MVP - 5 funkcji |
-| 9 | [`beatspermind-monetization-strategy.md`](docs/biznes/beatspermind-monetization-strategy.md) | Model cenowy Free/$4.99/$9.99 |
-| 10 | [`beatspermind-tech-stack-audit.md`](docs/biznes/beatspermind-tech-stack-audit.md) | Rekomendowane technologie |
-| 11 | [`beatspermind-resource-analysis.md`](docs/biznes/beatspermind-resource-analysis.md) | Analiza budżetu i zasobów |
-| 12 | [`beatspermind-gtm-strategy.md`](docs/biznes/beatspermind-gtm-strategy.md) | Strategia Go-To-Market |
-| 13 | [`beatspermind-user-journey-map.md`](docs/biznes/beatspermind-user-journey-map.md) | Mapa ścieżki użytkownika |
-
+| Dokument | Opis |
+|----------|------|
+| `SPEC.md` | Specyfikacja techniczna - struktura projektu, komponenty, dane JSON, algorytm dopasowania |
+| `README.md` | Główny opis projektu, funkcje MVP, tech stack |
 ---
 
 ## Podstawowe Informacje o Projekcie
