@@ -18,7 +18,12 @@ beats-per-mind/
 │   │   ├── FocusMode.jsx     # Timer Pomodoro + ambient sounds
 │   │   ├── Navigation.jsx   # Bottom nav / header
 │   │   ├── AmbientPlayer.jsx # Odtwarzacz ambient sounds
+│   │   ├── FocusModeTimer.jsx # Design Timera
+│   │   ├── LearnMore.jsx     # Dowiedz się więcej (BPM)
+│   │   ├── ThemeToggle.jsx   # Dark Mode Switch
 │   │   └── Timer.jsx         # Komponent timera
+│   ├── context/
+│   │   └── ThemeContext.jsx # Dark Mode 
 │   ├── data/
 │   │   ├── playlists.json    # 8 playlist z tagami
 │   │   └── ambientSounds.js  # Konfiguracja dźwięków
