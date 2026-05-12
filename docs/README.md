@@ -15,6 +15,60 @@ Dodatkowo aplikacja oferuje **Focus Mode** - timer Pomodoro z wbudowanymi dźwi�
 
 ---
 
+## 📁 Struktura Dokumentacji Projektowej
+
+### 🏛️ Architektura
+
+| # | Dokument | Ścieżka pliku | Opis |
+| --- | --- | --- | --- |
+| 1 |[`system_overview.md`](docs/architektura/system_overview.md) | Wysokopoziomowy opis systemu |
+| 2 |[`adr.md`](docs/architektura/adr.md) | Architecture Decision Records |
+| 3 |[`diagrams.md`](docs/architektura/diagrams.md) | Diagramy i schematy |
+
+### 💼 Biznes
+
+| # | Dokument | Ścieżka pliku | Opis |
+| --- | --- | --- | --- |
+| 4 | `business-plan.md` | [`docs/biznes/beatspermind-business-plan.md`]() | Analiza biznesowa |
+| 5 | `product-spec.md` | [`docs/biznes/beatspermind-product-spec.md`]() | Specyfikacja produktu |
+| 6 | `kill-the-idea.md` | [`docs/biznes/beatspermind-kill-the-idea.md`]() | Analiza ryzyka |
+| 7 | `competitor-audit.md` | [`docs/biznes/beatspermind-competitor-audit.md`]() | Audyt konkurencji |
+| 8 | `icp-persona.md` | [`docs/biznes/beatspermind-icp-persona.md`]() | Profil klienta |
+| 9 | `job-to-be-done.md` | [`docs/biznes/beatspermind-job-to-be-done.md`]() | Potrzeby użytkownika |
+| 10 | `mvp-scoping.md` | [`docs/biznes/beatspermind-mvp-scoping.md`]() | Zakres MVP |
+| 11 | `monetization.md` | [`docs/biznes/beatspermind-monetization-strategy.md`]() | Strategia monetyzacji |
+| 12 | `tech-stack.md` | [`docs/biznes/beatspermind-tech-stack-audit.md`]() | Audyt technologiczny |
+| 13 | `resource-analysis.md` | [`docs/biznes/beatspermind-resource-analysis.md`]() | Analiza zasobów |
+| 14 | `gtm-strategy.md` | [`docs/biznes/beatspermind-gtm-strategy.md`]() | Strategia Go-To-Market |
+| 15 | `user-journey.md` | [`docs/biznes/beatspermind-user-journey-map.md`]() | Mapa ścieżki użytkownika |
+
+### 📝 Plany Implementacji (Plans)
+
+| # | Dokument | Ścieżka pliku | Status |
+| --- | --- | --- | --- |
+| 16 |[`zaimplementowane-plany.md`](docs/plans/zaimplementowane-plany.md) | Rejestr planów |
+| 17 |[`zaimplementowane-funkcjonalności.md`](docs/plans/zaimplementowane-funkcjonalności.md) | Rejestr funkcji |
+
+*(Uwaga: pozostałe pliki implementacji znajdują się w folderze `docs/plans/`)*
+
+### 👥 Role Projektowe
+
+| # | Dokument | Ścieżka pliku | Opis |
+| --- | --- | --- | --- |
+| 24 | `AGENTS.md` | [`docs/roles/AGENTS.md`]() | **Instrukcja dla AI** |
+| 25 | `product_owner.md` | [`docs/roles/product_owner.md`]() | Rola PO |
+| 26 | `architect.md` | [`docs/roles/architect.md`]() | Rola Architekta |
+| 27 | `developer.md` | [`docs/roles/developer.md`]() | Rola Developera |
+| 28 | `tester.md` | [`docs/roles/tester.md`]() | Rola Testera |
+| 29 | `ux_ui.md` | [`docs/roles/ux_ui.md`]() | Rola UX/UI |
+| 30 | `README.md` | [`docs/roles/README.md`]() | Podsumowanie ról |
+
+---
+
+Pamiętaj, że w GitHub linki wewnątrz Markdown są **case-sensitive** (rozróżniają wielkość liter). Sprawdź dwa razy, czy plik `AGENTS.md` na pewno ma wielkie litery w nazwie pliku w Twoim systemie plików, by link zadziałał poprawnie.
+
+Czy chciałabyś, abym pomógł Ci teraz przygotować sekcję "Jak zacząć" (Quick Start) do tego samego pliku README?
+
 ## 📁 Struktura Plików z Dokumentacją
 
 | # | Dokument | Opis |
