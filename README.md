@@ -28,8 +28,8 @@ Dodatkowo aplikacja oferuje **Focus Mode** - timer Pomodoro z wbudowanymi dźwi�
 
 ### 🏛️ Architektura
 
-| # | Dokument | Ścieżka pliku | Opis |
-| --- | --- | --- | --- |
+| # | Dokument | Opis |
+| --- | --- | --- |
 | 1 |[`system_overview.md`](docs/architektura/system_overview.md) | Wysokopoziomowy opis systemu |
 | 2 |[`adr.md`](docs/architektura/adr.md) | Architecture Decision Records |
 | 3 |[`diagrams.md`](docs/architektura/diagrams.md) | Diagramy i schematy |
@@ -54,8 +54,8 @@ Dodatkowo aplikacja oferuje **Focus Mode** - timer Pomodoro z wbudowanymi dźwi�
 
 ### 📝 Plany Implementacji (Plans)
 
-| # | Dokument | Ścieżka pliku | Status |
-| --- | --- | --- | --- |
+| # | Dokument | Opis |
+| --- | --- | --- |
 | 16 |[`zaimplementowane-plany.md`](docs/plans/zaimplementowane-plany.md) | Rejestr planów |
 | 17 |[`zaimplementowane-funkcjonalności.md`](docs/plans/zaimplementowane-funkcjonalności.md) | Rejestr funkcji |
 
@@ -63,8 +63,8 @@ Dodatkowo aplikacja oferuje **Focus Mode** - timer Pomodoro z wbudowanymi dźwi�
 
 ### 👥 Role Projektowe
 
-| # | Dokument | Ścieżka pliku | Opis |
-| --- | --- | --- | --- |
+| # | Dokument | Opis |
+| --- | --- | --- |
 | 24 |[`AGENTS.md`](docs/roles/AGENTS.md) | **Instrukcja dla AI** |
 | 25 |[`product_owner.md`](docs/roles/product_owner.md) | Rola PO |
 | 26 |[`architect.md`](docs/roles/architect.md) | Rola Architekta |
