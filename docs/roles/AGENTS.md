@@ -8,7 +8,7 @@ Wszystkie szczegóły projektu znajdują się w katalogu `docs/biznes`:
 
 | # | Dokument | Opis |
 |---|----------|------|
-| 2 | [`beatspermind-business-plan.md`](docs/biznes/beatspermind-business-plan.md) | Pełna analiza biznesowa |
+| 2 | [`beatspermind-business-plan.md`](biznes/beatspermind-business-plan.md) | Pełna analiza biznesowa |
 | 3 | [`beatspermind-product-spec.md`](docs/biznes/beatspermind-product-spec.md) | Specyfikacja produktu |
 | 4 | [`beatspermind-kill-the-idea.md`](docs/biznes/beatspermind-kill-the-idea.md) | Analiza ryzyka - werdykt PIVOT |
 | 5 | [`beatspermind-competitor-audit.md`](docs/biznes/beatspermind-competitor-audit.md) | Analiza 8 konkurentów |
